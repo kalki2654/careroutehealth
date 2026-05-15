@@ -23,6 +23,13 @@ type LeadSubmissionResult = {
   };
 };
 
+class ConfigError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "ConfigError";
+  }
+}
+
 const placeholderMarkers = [
   "YOUR_KEY_HERE",
   "your-service-account",
@@ -68,8 +75,25 @@ function sanitizeLead(data: LeadFormData): LeadFormData {
 function requiredEnv(keys: string[]) {
   const missing = keys.filter((key) => !envValue(key));
   if (missing.length) {
-    throw new Error(`Missing or placeholder environment variables: ${missing.join(", ")}`);
+    throw new ConfigError(`Missing or placeholder environment variables: ${missing.join(", ")}`);
   }
+}
+
+function googlePrivateKey() {
+  const privateKey = envValue("GOOGLE_PRIVATE_KEY").replace(/\\n/g, "\n");
+
+  if (
+    !privateKey ||
+    privateKey.length < 1000 ||
+    !privateKey.includes("-----BEGIN PRIVATE KEY-----") ||
+    !privateKey.includes("-----END PRIVATE KEY-----")
+  ) {
+    throw new ConfigError(
+      "Google private key is missing or incomplete. Replace GOOGLE_PRIVATE_KEY with the full service account private_key."
+    );
+  }
+
+  return privateKey;
 }
 
 async function saveToGoogleSheets(data: LeadFormData) {
@@ -77,7 +101,7 @@ async function saveToGoogleSheets(data: LeadFormData) {
 
   const auth = await google.auth.getClient({
     credentials: {
-      private_key: envValue("GOOGLE_PRIVATE_KEY").replace(/\\n/g, "\n"),
+      private_key: googlePrivateKey(),
       client_email: envValue("GOOGLE_CLIENT_EMAIL")
     },
     scopes: ["https://www.googleapis.com/auth/spreadsheets"]
@@ -177,7 +201,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json<LeadSubmissionResult>(
         {
           success: false,
-          message: "Lead could not be saved. Please check Google Sheets configuration.",
+          message:
+            googleSheets.reason instanceof ConfigError
+              ? googleSheets.reason.message
+              : "Lead could not be saved. Please check Google Sheets configuration.",
           delivery
         },
         { status: 502 }
