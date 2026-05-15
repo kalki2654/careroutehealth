@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { whatsappUrl } from "@/lib/constants";
 
 export function MobileBottomBar() {
   return (
@@ -13,14 +12,6 @@ export function MobileBottomBar() {
         >
           Start Free Assessment
         </Link>
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="flex-1 rounded-full bg-[#25D366] px-4 py-3 text-center text-xs font-bold text-white"
-        >
-          WhatsApp
-        </a>
       </div>
     </div>
   );

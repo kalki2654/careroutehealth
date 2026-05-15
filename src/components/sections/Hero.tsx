@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { BadgeCheck, Clock3, LockKeyhole, ShieldCheck, Star } from "lucide-react";
-import { heroBadges, whatsappUrl } from "@/lib/constants";
+import { heroBadges } from "@/lib/constants";
 import { TextReveal } from "@/components/ui/TextReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
@@ -204,9 +204,6 @@ export function Hero() {
 
           <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:items-center md:mt-10 md:gap-3">
             <MagneticButton href="#assessment" className="min-h-11 w-full sm:w-auto md:min-h-12">Start My Free Assessment</MagneticButton>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="mt-1 block w-full text-center text-xs font-bold text-brand-dark underline decoration-brand-coral/45 underline-offset-4 sm:mt-0 sm:w-auto sm:text-left md:text-sm">
-              Or chat with us on WhatsApp
-            </a>
           </div>
         </motion.div>
 

@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronLeft, ChevronRight, LockKeyhole } from "lucide-react";
 import { FormEvent } from "react";
-import { countries, fundingOptions, readinessOptions, treatmentOptions, whatsappUrl } from "@/lib/constants";
+import { countries, fundingOptions, readinessOptions, treatmentOptions } from "@/lib/constants";
 import { useQuizForm } from "@/hooks/useQuizForm";
 import { cn } from "@/lib/utils";
 
@@ -55,10 +55,10 @@ export function Assessment() {
     (quiz.step === 4 && quiz.data.name.trim() && quiz.data.phone.trim())
   );
 
-  const submit = (event: FormEvent) => {
+  const submit = async (event: FormEvent) => {
     event.preventDefault();
     if (!canContinue) return;
-    quiz.setSubmitted(true);
+    await quiz.handleSubmit(quiz.data);
   };
 
   return (
@@ -239,14 +239,6 @@ export function Assessment() {
                   <li>2. We prepare 2-3 hospital and doctor options matched to your needs.</li>
                   <li>3. We contact you with a clear cost overview and next steps.</li>
                 </ol>
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-dark px-6 text-sm font-bold text-white sm:w-fit md:mt-8"
-                >
-                  Open WhatsApp
-                </a>
               </motion.div>
             )}
           </AnimatePresence>
@@ -276,25 +268,22 @@ export function Assessment() {
                 ) : (
                   <button
                     type="submit"
-                    disabled={!canContinue}
+                    disabled={!canContinue || quiz.isSubmitting}
                     className="inline-flex min-h-12 min-w-0 flex-[1.45] items-center justify-center rounded-full bg-brand-dark px-3 text-xs font-bold text-white disabled:cursor-not-allowed disabled:opacity-35 min-[360px]:text-sm sm:flex-none sm:px-6"
                   >
-                    Send My Assessment
+                    {quiz.isSubmitting ? "Sending..." : "Send My Assessment"}
                   </button>
                 )}
               </div>
+              {quiz.submitStatus === "error" ? (
+                <p className="mt-3 rounded-xl border border-brand-coral/30 bg-white px-4 py-3 text-xs font-bold leading-5 text-brand-dark md:text-sm">
+                  {quiz.submitMessage || "Something went wrong. Please try again."}
+                </p>
+              ) : null}
               <p className="mt-4 text-xs leading-5 text-brand-dark/65 md:mt-5 md:text-sm md:leading-6">
                 Your information is encrypted and confidential. We will respond within 24 hours with personalised
                 guidance, no pressure and no sales pitch.
               </p>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex text-xs font-extrabold text-brand-dark underline decoration-brand-coral/45 underline-offset-4 md:text-sm"
-              >
-                Prefer to message us directly? Open WhatsApp
-              </a>
             </>
           ) : null}
         </form>

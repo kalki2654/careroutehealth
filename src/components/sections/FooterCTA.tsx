@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { whatsappUrl } from "@/lib/constants";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export function FooterCTA() {
@@ -25,9 +24,6 @@ export function FooterCTA() {
         <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-6 md:gap-4">
           <MagneticButton href="#assessment" variant="coral" className="w-full sm:w-auto">
             Start My Free Assessment
-          </MagneticButton>
-          <MagneticButton href={whatsappUrl} target="_blank" rel="noreferrer" variant="outline" className="w-full sm:w-auto">
-            Speak on WhatsApp
           </MagneticButton>
         </div>
         <p className="mt-4 text-xs font-semibold leading-5 text-white/70 md:mt-7 md:text-sm">

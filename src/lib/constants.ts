@@ -6,9 +6,6 @@ export const navLinks = [
   { href: "/#faqs", label: "FAQs" }
 ];
 
-export const whatsappUrl =
-  "https://api.whatsapp.com/send?text=Hi%20CareRoute%2C%20I%20am%20looking%20for%20guidance%20on%20treatment%20in%20India.";
-
 export const heroBadges = [
   "Your reports stay private and encrypted",
   "NABH and JCI accredited hospital options",
@@ -27,7 +24,7 @@ export const processSteps = [
   {
     eyebrow: "Tell us",
     title: "Tell us about your condition or treatment need",
-    body: "Send the diagnosis, treatment question, or medical concern via our assessment form or WhatsApp. No medical jargon required, just tell us what is happening."
+    body: "Send the diagnosis, treatment question, or medical concern via our assessment form. No medical jargon required, just tell us what is happening."
   },
   {
     eyebrow: "Secure review",

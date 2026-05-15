@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { whatsappUrl } from "@/lib/constants";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 
 const services = [
@@ -55,9 +54,9 @@ export function SiteFooter() {
         <div className="col-span-2 md:col-span-1 lg:col-span-1">
           <h3 className="mb-3 text-sm font-extrabold uppercase text-white md:mb-5">Contact</h3>
           <div className="grid gap-1.5 text-xs md:gap-3 md:text-sm">
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-white">
-              WhatsApp CareRoute
-            </a>
+            <Link href="/#assessment" className="hover:text-white">
+              Start Free Assessment
+            </Link>
             <a href="mailto:hello@careroute.health" className="hover:text-white">
               hello@careroute.health
             </a>
