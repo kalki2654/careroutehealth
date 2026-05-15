@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: "Cormorant Garamond";
+  --font-sans: "Inter";
+  --background: #f7f5f0;
+  --foreground: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+[data-lenis-prevent-touch] {
+  touch-action: pan-y pinch-zoom;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans), Inter, ui-sans-serif, system-ui, sans-serif;
+  text-rendering: geometricPrecision;
+  overflow-x: hidden;
+}
+
+::selection {
+  color: #ffffff;
+  background: #10302e;
+}
+
+button,
+a,
+input,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.site-grid {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(clamp(1rem, 5vw, 4rem), 1fr)
+    [content-start] minmax(0, 1440px)
+    [content-end] minmax(clamp(1rem, 5vw, 4rem), 1fr)
+    [full-end];
+}
+
+.site-grid > * {
+  grid-column: content;
+}
+
+.full-bleed {
+  grid-column: full;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
