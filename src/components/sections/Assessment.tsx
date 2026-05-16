@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronLeft, ChevronRight, LockKeyhole } from "lucide-react";
 import { FormEvent } from "react";
-import { countries, fundingOptions, readinessOptions, treatmentOptions } from "@/lib/constants";
+import { contactMethodOptions, countries, fundingOptions, readinessOptions, treatmentOptions } from "@/lib/constants";
 import { useQuizForm } from "@/hooks/useQuizForm";
 import { cn } from "@/lib/utils";
 
@@ -46,13 +46,19 @@ function OptionButton({
 export function Assessment() {
   const quiz = useQuizForm(5);
   const firstName = quiz.data.name.trim().split(/\s+/)[0] || "there";
+  const prefersEmail = quiz.data.contactMethod === "Email";
+  const contactMethodLabel = prefersEmail ? "email" : "WhatsApp";
 
   const canContinue = Boolean(
     (quiz.step === 0 && quiz.data.treatment) ||
     (quiz.step === 1 && quiz.data.country) ||
     (quiz.step === 2 && quiz.data.readiness) ||
     (quiz.step === 3 && quiz.data.funding) ||
-    (quiz.step === 4 && quiz.data.name.trim() && quiz.data.phone.trim())
+    (quiz.step === 4 &&
+      quiz.data.name.trim() &&
+      quiz.data.phone.trim() &&
+      quiz.data.contactMethod &&
+      (!prefersEmail || quiz.data.email.trim()))
   );
 
   const submit = async (event: FormEvent) => {
@@ -200,6 +206,7 @@ export function Assessment() {
                         onChange={(event) => quiz.update("email", event.target.value)}
                         autoComplete="email"
                         type="email"
+                        required={prefersEmail}
                         className="h-12 rounded-xl border border-brand-border bg-white px-4 text-base text-brand-dark outline-none focus:border-brand-coral md:h-[3.25rem]"
                       />
                     </label>
@@ -216,6 +223,20 @@ export function Assessment() {
                         <option>Evening</option>
                       </select>
                     </label>
+                    <div className="grid gap-2 text-sm font-bold text-brand-dark/68 md:col-span-2">
+                      Preferred contact method
+                      <div className="grid gap-2 sm:grid-cols-2">
+                        {contactMethodOptions.map((option) => (
+                          <OptionButton
+                            key={option}
+                            active={quiz.data.contactMethod === option}
+                            onClick={() => quiz.update("contactMethod", option)}
+                          >
+                            {option}
+                          </OptionButton>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 ) : null}
               </motion.div>
@@ -231,7 +252,7 @@ export function Assessment() {
                 </div>
                 <h3 className="font-serif text-3xl font-semibold leading-none md:text-6xl">Thank you, {firstName}.</h3>
                 <p className="mt-4 max-w-2xl text-base leading-7 text-brand-dark/80 md:mt-6 md:text-lg md:leading-8">
-                  We have received your assessment and will contact you on WhatsApp within 24 hours with personalised
+                  We have received your assessment and will contact you by {contactMethodLabel} within 24 hours with personalised
                   guidance.
                 </p>
                 <ol className="mt-5 grid gap-2 text-sm font-bold text-brand-dark/85 md:mt-8 md:gap-3">

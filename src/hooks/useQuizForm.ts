@@ -11,6 +11,7 @@ export type QuizData = {
   phone: string;
   email: string;
   contactTime: string;
+  contactMethod: string;
 };
 
 const initialData: QuizData = {
@@ -21,7 +22,8 @@ const initialData: QuizData = {
   name: "",
   phone: "",
   email: "",
-  contactTime: "Anytime"
+  contactTime: "Anytime",
+  contactMethod: ""
 };
 
 export function useQuizForm(totalSteps: number) {

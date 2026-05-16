@@ -12,6 +12,7 @@ type LeadFormData = {
   phone: string;
   email?: string;
   contactTime?: string;
+  contactMethod: string;
 };
 
 type LeadSubmissionResult = {
@@ -85,13 +86,17 @@ function formatTimestamp() {
 }
 
 function validateData(data: Partial<LeadFormData>): data is LeadFormData {
+  const contactMethod = data.contactMethod?.trim();
+
   return Boolean(
     data.treatment?.trim() &&
       data.country?.trim() &&
       data.readiness?.trim() &&
       data.funding?.trim() &&
       data.name?.trim() &&
-      data.phone?.trim()
+      data.phone?.trim() &&
+      (contactMethod === "WhatsApp" || contactMethod === "Email") &&
+      (contactMethod !== "Email" || data.email?.trim())
   );
 }
 
@@ -104,7 +109,8 @@ function sanitizeLead(data: LeadFormData): LeadFormData {
     name: data.name.trim(),
     phone: data.phone.trim(),
     email: data.email?.trim() || "",
-    contactTime: data.contactTime?.trim() || "Anytime"
+    contactTime: data.contactTime?.trim() || "Anytime",
+    contactMethod: data.contactMethod.trim()
   };
 }
 
@@ -147,7 +153,7 @@ async function saveToGoogleSheets(data: LeadFormData) {
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: envValue("GOOGLE_SHEET_ID"),
-    range: "Sheet1!A:I",
+    range: "Sheet1!A:J",
     valueInputOption: "USER_ENTERED",
     requestBody: {
       values: [
@@ -160,7 +166,8 @@ async function saveToGoogleSheets(data: LeadFormData) {
           data.country,
           data.readiness,
           data.funding,
-          data.contactTime || "Anytime"
+          data.contactTime || "Anytime",
+          data.contactMethod
         ]
       ]
     }
@@ -176,6 +183,7 @@ async function sendTelegramAlert(data: LeadFormData) {
     `Name: ${data.name}`,
     `WhatsApp: ${data.phone}`,
     `Email: ${data.email || "Not provided"}`,
+    `Preferred contact method: ${data.contactMethod}`,
     `Treatment: ${data.treatment}`,
     `Country: ${data.country}`,
     `Reports / diagnosis: ${data.readiness}`,
@@ -208,7 +216,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json<LeadSubmissionResult>(
         {
           success: false,
-          message: "Missing required fields: treatment, country, readiness, funding, name, phone"
+          message:
+            "Missing required fields: treatment, country, readiness, funding, name, phone, contact method. Email is required when email is preferred."
         },
         { status: 400 }
       );

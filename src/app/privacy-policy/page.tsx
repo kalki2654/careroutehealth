@@ -17,7 +17,7 @@ const sections = [
   {
     title: "Information we collect",
     body: [
-      "We collect information you choose to share with us. This may include your name, email address, WhatsApp or phone number, country of residence, treatment interest, preferred contact time, and details about your medical concern.",
+      "We collect information you choose to share with us. This may include your name, email address, WhatsApp or phone number, country of residence, treatment interest, preferred contact time, preferred contact method, and details about your medical concern.",
       "If you send medical records, reports, prescriptions, scans, test results, or other health documents, we treat that information as sensitive and handle it with additional care."
     ]
   },

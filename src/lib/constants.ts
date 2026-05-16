@@ -256,3 +256,5 @@ export const fundingOptions = [
   "I need a cost estimate first",
   "Not sure yet"
 ];
+
+export const contactMethodOptions = ["WhatsApp", "Email"];
