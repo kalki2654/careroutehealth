@@ -40,8 +40,44 @@ const placeholderMarkers = [
 ];
 
 function envValue(key: string) {
-  const value = process.env[key]?.trim();
+  let value = process.env[key]?.trim();
+
+  if (
+    value &&
+    ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'")))
+  ) {
+    value = value.slice(1, -1).trim();
+  }
+
   return value && !placeholderMarkers.some((marker) => value.includes(marker)) ? value : "";
+}
+
+function googleSheetsErrorMessage(error: unknown) {
+  if (error instanceof ConfigError) {
+    return error.message;
+  }
+
+  const details = error as { code?: number | string; status?: number | string; message?: string };
+  const status = Number(details?.code || details?.status || 0);
+  const message = details?.message || "";
+
+  if (status === 403) {
+    return "Google Sheets rejected access. Share the spreadsheet with GOOGLE_CLIENT_EMAIL as Editor and confirm the Google Sheets API is enabled.";
+  }
+
+  if (status === 404) {
+    return "Google Sheet was not found. Check GOOGLE_SHEET_ID and make sure the service account has access.";
+  }
+
+  if (/DECODER|private key|PEM|unsupported/i.test(message)) {
+    return "Google private key is invalid. In Vercel, paste the full GOOGLE_PRIVATE_KEY without wrapping quotes, or use escaped \\n newlines.";
+  }
+
+  if (/invalid_grant|JWT|No key or keyFile/i.test(message)) {
+    return "Google service account credentials are invalid. Check GOOGLE_CLIENT_EMAIL and GOOGLE_PRIVATE_KEY belong to the same service account.";
+  }
+
+  return "Lead could not be saved. Please check Google Sheets configuration.";
 }
 
 function formatTimestamp() {
@@ -201,10 +237,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json<LeadSubmissionResult>(
         {
           success: false,
-          message:
-            googleSheets.reason instanceof ConfigError
-              ? googleSheets.reason.message
-              : "Lead could not be saved. Please check Google Sheets configuration.",
+          message: googleSheetsErrorMessage(googleSheets.reason),
           delivery
         },
         { status: 502 }
