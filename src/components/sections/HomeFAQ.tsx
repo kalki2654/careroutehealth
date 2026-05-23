@@ -7,24 +7,32 @@ import { SectionReveal } from "@/components/core/SectionReveal";
 
 const faqs = [
   {
-    question: "Who is USA Health Insurance Navigation for?",
-    answer: "This service is designed for expats and international students living in the U.S. who need help understanding their health insurance, navigating the healthcare system, estimating costs, and avoiding surprise bills."
+    question: "Who is CareRoute for?",
+    answer: "CareRoute is designed for expats, international students, parents, and families who need help navigating healthcare decisions in the U.S. or coordinating family healthcare support in India."
   },
   {
-    question: "Who should use India Health Access Membership?",
-    answer: "This membership is for families who have parents or loved ones in India and need help coordinating their healthcare—from finding the right doctors to managing appointments and understanding treatment options."
+    question: "Is CareRoute a hospital, clinic, or insurance company?",
+    answer: "No. CareRoute is a healthcare navigation and support service. We help you understand options, costs, and next steps so you can make more informed decisions."
   },
   {
-    question: "Is CareRoute for emergencies?",
-    answer: "No, CareRoute is not an emergency service. If you have a medical emergency, call 911 (in the U.S.) or your local emergency number. CareRoute helps with planning, navigation, and non-urgent healthcare decisions."
+    question: "Can you help me decide where to go for care in the U.S.?",
+    answer: "Yes. We help you think through the right care setting based on your situation, such as ER, urgent care, primary care, telehealth, or waiting safely when appropriate."
   },
   {
-    question: "Can CareRoute help reduce healthcare costs?",
-    answer: "Yes. We help you understand your insurance coverage, find in-network providers, estimate out-of-pocket costs before visits, and identify lower-cost care options. For families in India, we help coordinate affordable, quality care."
+    question: "Can you tell me exactly what my medical bill will be?",
+    answer: "No one can guarantee an exact bill in every situation, but we can help you understand likely costs, common billing issues, and what questions to ask before you receive care."
   },
   {
-    question: "Does CareRoute work for families in different countries?",
-    answer: "Absolutely. CareRoute is specifically designed for families spread across borders—whether you're an expat in the U.S. or supporting family members in India, we provide specialized guidance for both situations."
+    question: "What does the India membership help with?",
+    answer: "The India Health Access Membership is designed for families supporting parents or loved ones in India. It helps with routine care coordination, appointments, follow-ups, and healthcare guidance from abroad."
+  },
+  {
+    question: "Do you provide emergency medical treatment?",
+    answer: "No. If you are having a medical emergency, call local emergency services or go to the nearest emergency department immediately. CareRoute supports navigation and coordination, not direct emergency treatment."
+  },
+  {
+    question: "Is my information private?",
+    answer: "Yes. We take privacy seriously and handle personal information carefully as part of the support experience."
   }
 ];
 
@@ -32,15 +40,18 @@ export function HomeFAQ() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section id="faq" className="site-grid scroll-mt-24 bg-brand-cream py-16 md:py-24">
+    <section id="faq" className="site-grid scroll-mt-24 bg-white py-16 md:py-24">
       <SectionReveal>
+        <div className="mb-4 text-center">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-coral">
+            Questions, answered
+          </p>
+        </div>
+        
         <div className="mb-12 text-center md:mb-16">
           <h2 className="font-serif text-3xl font-semibold text-brand-dark md:text-5xl">
             Everything you're wondering about
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-brand-dark/70 md:text-lg">
-            Quick answers to common questions about CareRoute
-          </p>
         </div>
 
         <div className="mx-auto max-w-3xl space-y-4">
@@ -53,12 +64,12 @@ export function HomeFAQ() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="overflow-hidden rounded-xl border border-brand-border bg-white shadow-soft"
+                transition={{ duration: 0.5, delay: index * 0.06 }}
+                className="overflow-hidden rounded-xl border border-brand-border bg-brand-cream shadow-soft"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                  className="flex w-full items-start justify-between gap-4 p-6 text-left transition-colors hover:bg-brand-cream/30 md:p-8"
+                  className="flex w-full items-start justify-between gap-4 p-6 text-left transition-colors hover:bg-white/50 md:p-8"
                   aria-expanded={isOpen}
                 >
                   <span className="font-serif text-lg font-semibold text-brand-dark md:text-xl">
@@ -83,7 +94,7 @@ export function HomeFAQ() {
                       className="overflow-hidden"
                     >
                       <div className="border-t border-brand-border px-6 pb-6 pt-4 md:px-8 md:pb-8">
-                        <p className="text-sm leading-relaxed text-brand-dark/70 md:text-base">
+                        <p className="text-sm leading-relaxed text-brand-dark/75 md:text-base">
                           {faq.answer}
                         </p>
                       </div>

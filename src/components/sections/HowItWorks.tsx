@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, MessageSquare, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageSquare, TrendingUp } from "lucide-react";
 import { SectionReveal } from "@/components/core/SectionReveal";
 
 const steps = [
@@ -9,19 +9,25 @@ const steps = [
     number: "01",
     icon: MessageSquare,
     title: "Choose your path",
-    description: "Select USA Health Insurance Navigation or India Health Access Membership based on where you need support"
+    description: "Tell us whether you need U.S. healthcare navigation or India family care support."
   },
   {
     number: "02",
     icon: CheckCircle2,
-    title: "Get the right guidance",
-    description: "Receive personalized support tailored to your specific healthcare situation and location"
+    title: "Share your situation",
+    description: "Answer a few simple questions so we understand your insurance, care need, family context, or current challenge."
   },
   {
     number: "03",
     icon: TrendingUp,
+    title: "Get practical guidance",
+    description: "Receive clear next steps, support options, and cost-aware recommendations based on your situation."
+  },
+  {
+    number: "04",
+    icon: ArrowRight,
     title: "Move forward with confidence",
-    description: "Make informed decisions with clear information, cost transparency, and ongoing support"
+    description: "Make better care decisions with less confusion, better preparation, and ongoing support when needed."
   }
 ];
 
@@ -29,16 +35,22 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="site-grid scroll-mt-24 bg-brand-cream py-16 md:py-24">
       <SectionReveal>
+        <div className="mb-4 text-center">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-coral">
+            How CareRoute works
+          </p>
+        </div>
+        
         <div className="mb-12 text-center md:mb-16">
           <h2 className="font-serif text-3xl font-semibold text-brand-dark md:text-5xl">
-            How CareRoute works
+            Simple, clear steps when healthcare feels complicated.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-brand-dark/70 md:text-lg">
-            Simple, clear steps to get the healthcare support you need
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-brand-dark/70 md:text-lg">
+            CareRoute is designed to reduce uncertainty. Whether you need help in the U.S. or support for family in India, the process is straightforward and personal.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3 md:gap-10">
+        <div className="grid gap-8 sm:grid-cols-2 md:gap-10 lg:grid-cols-4">
           {steps.map((step, index) => {
             const Icon = step.icon;
             
@@ -48,15 +60,15 @@ export function HowItWorks() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="mb-6 flex items-center gap-4">
-                  <span className="font-serif text-5xl font-bold text-brand-coral/20 md:text-6xl">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="font-serif text-4xl font-bold text-brand-coral/20 md:text-5xl">
                     {step.number}
                   </span>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-soft">
-                    <Icon className="h-6 w-6 text-brand-dark" strokeWidth={1.5} />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white shadow-soft">
+                    <Icon className="h-5 w-5 text-brand-dark" strokeWidth={1.5} />
                   </div>
                 </div>
 
@@ -66,10 +78,6 @@ export function HowItWorks() {
                 <p className="text-sm leading-relaxed text-brand-dark/70 md:text-base">
                   {step.description}
                 </p>
-
-                {index < steps.length - 1 && (
-                  <div className="absolute -right-5 top-8 hidden h-0.5 w-10 bg-brand-border md:block" />
-                )}
               </motion.div>
             );
           })}

@@ -9,7 +9,7 @@ export function HomeHero() {
     <section className="site-grid pt-0 md:pt-14">
       <div aria-hidden="true" className="mb-[14px] md:hidden" style={{ height: "var(--mobile-nav-clearance)" }} />
       
-      <div className="flex min-h-[60vh] flex-col items-center justify-center pb-16 pt-12 text-center md:min-h-[70vh] md:pb-24 md:pt-20">
+      <div className="flex min-h-[60vh] flex-col items-center justify-center pb-12 pt-12 text-center md:min-h-[65vh] md:pb-16 md:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ export function HomeHero() {
           className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-border bg-white/70 px-4 py-2 text-xs font-semibold text-brand-dark/80 md:mb-6 md:px-5 md:py-2.5 md:text-sm"
         >
           <span className="h-2 w-2 rounded-full bg-brand-coral" />
-          Healthcare navigation for families across borders
+          Healthcare navigation across borders
         </motion.div>
 
         <TextReveal
@@ -32,7 +32,7 @@ export function HomeHero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-brand-dark/75 md:mt-8 md:text-lg md:leading-relaxed"
         >
-          CareRoute helps expats, students, parents, and families navigate care, understand costs, and choose the right support in the U.S. and India.
+          CareRoute helps expats, students, parents, and families navigate care, understand costs, and choose the right support in the U.S. and India — with clearer guidance, less confusion, and more confidence.
         </motion.p>
 
         <motion.div
@@ -48,6 +48,15 @@ export function HomeHero() {
             See How It Works
           </MagneticButton>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="mt-8 text-sm text-brand-dark/60 md:mt-10 md:text-base"
+        >
+          Private. Human. Cost-aware. Built for families navigating healthcare across borders.
+        </motion.p>
       </div>
     </section>
   );
