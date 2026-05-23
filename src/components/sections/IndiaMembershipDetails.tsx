@@ -40,6 +40,9 @@ export function IndiaMembershipDetails() {
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-brand-dark/70 md:text-lg">
             When you live outside India, even small healthcare tasks for your parents or loved ones can become stressful. CareRoute helps families stay organized, supported, and more confident in routine care decisions and coordination.
           </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm font-medium text-brand-dark/80 md:text-base">
+            Membership includes ongoing support, appointment coordination, and guidance for routine healthcare needs.
+          </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3 md:gap-10">
