@@ -42,24 +42,24 @@ const pathways = [
 
 export function PathwayCards() {
   return (
-    <section id="pathways" className="site-grid scroll-mt-24 bg-white py-16 md:py-24">
+    <section id="pathways" className="site-grid scroll-mt-24 bg-white py-12 sm:py-16 md:py-24">
       <SectionReveal>
-        <div className="mb-4 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-brand-coral">
+        <div className="mb-3 text-center sm:mb-4">
+          <p className="text-xs font-semibold uppercase tracking-wider text-brand-coral sm:text-sm">
             Choose your path
           </p>
         </div>
         
-        <div className="mb-12 text-center md:mb-16">
-          <h2 className="font-serif text-3xl font-semibold text-brand-dark md:text-5xl">
+        <div className="mb-10 text-center sm:mb-12 md:mb-16">
+          <h2 className="font-serif text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl md:text-5xl md:leading-tight">
             Two healthcare journeys. One trusted guide.
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-brand-dark/70 md:text-lg">
+          <p className="mx-auto mt-3 max-w-3xl px-4 text-sm leading-relaxed text-brand-dark/70 sm:mt-4 sm:text-base md:text-lg">
             CareRoute offers specialized support for two very different situations: navigating healthcare in the U.S., and helping your family access and coordinate care in India. Choose the path that fits where you need support today.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 md:gap-10">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 md:gap-10">
           {pathways.map((pathway, index) => {
             const Icon = pathway.icon;
             const isUSA = pathway.id === "usa";
@@ -71,28 +71,28 @@ export function PathwayCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group relative overflow-hidden rounded-2xl border border-brand-border bg-brand-cream p-8 shadow-soft transition-all duration-300 hover:shadow-lift md:p-10"
+                className="group relative overflow-hidden rounded-2xl border border-brand-border bg-brand-cream p-6 shadow-soft transition-all duration-300 hover:shadow-lift sm:p-8 md:p-10"
               >
-                <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl ${isUSA ? "bg-brand-coral/10" : "bg-brand-mint"}`}>
-                  <Icon className={`h-7 w-7 ${isUSA ? "text-brand-coral" : "text-brand-dark"}`} strokeWidth={1.5} />
+                <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl sm:mb-6 sm:h-14 sm:w-14 ${isUSA ? "bg-brand-coral/10" : "bg-brand-mint"}`}>
+                  <Icon className={`h-6 w-6 sm:h-7 sm:w-7 ${isUSA ? "text-brand-coral" : "text-brand-dark"}`} strokeWidth={1.5} />
                 </div>
 
-                <p className="mb-3 text-sm font-semibold text-brand-dark/70 md:text-base">
+                <p className="mb-2 text-xs font-semibold text-brand-dark/70 sm:mb-3 sm:text-sm md:text-base">
                   {pathway.eyebrow}
                 </p>
 
-                <h3 className="mb-4 font-serif text-2xl font-semibold leading-tight text-brand-dark md:text-3xl">
+                <h3 className="mb-3 font-serif text-xl font-semibold leading-tight text-brand-dark sm:mb-4 sm:text-2xl md:text-3xl">
                   {pathway.title}
                 </h3>
 
-                <p className="mb-6 text-sm leading-relaxed text-brand-dark/75 md:text-base">
+                <p className="mb-5 text-sm leading-relaxed text-brand-dark/75 sm:mb-6 sm:text-base">
                   {pathway.body}
                 </p>
 
-                <ul className="mb-8 space-y-3">
+                <ul className="mb-6 space-y-2.5 sm:mb-8 sm:space-y-3">
                   {pathway.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-brand-dark/80 md:text-base">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-dark/40" strokeWidth={2} />
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-brand-dark/80 sm:gap-3 sm:text-base">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-dark/40 sm:h-5 sm:w-5" strokeWidth={2} />
                       <span className="leading-snug">{benefit}</span>
                     </li>
                   ))}
@@ -100,7 +100,7 @@ export function PathwayCards() {
 
                 <Link
                   href={pathway.href}
-                  className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ${
+                  className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 sm:w-auto sm:px-6 ${
                     isUSA
                       ? "bg-brand-coral text-white hover:bg-brand-coral/90"
                       : "bg-brand-dark text-white hover:bg-brand-dark/90"
