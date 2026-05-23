@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import Link from "next/link";
 
 export function HomeHero() {
   return (
@@ -23,7 +23,7 @@ export function HomeHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mx-auto max-w-5xl font-serif text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-brand-dark sm:text-[2.75rem] md:text-[4rem] lg:text-[5rem] md:leading-[1.05]"
+          className="mx-auto max-w-5xl font-serif text-[2.25rem] font-semibold leading-[1.15] tracking-tight text-brand-dark sm:text-[2.75rem] sm:leading-[1.1] md:text-[4rem] md:leading-[1.05] lg:text-[5rem]"
         >
           Healthcare help for your family, wherever they are
         </motion.h1>
@@ -41,22 +41,20 @@ export function HomeHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-7 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:justify-center md:mt-9"
+          className="mt-7 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4 md:mt-9"
         >
-          <MagneticButton 
-            href="#pathways" 
-            variant="dark" 
-            className="w-full min-h-12 px-6 sm:w-auto md:min-h-14 md:px-10"
+          <Link
+            href="#pathways"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:bg-brand-dark/90 sm:w-auto sm:px-8 sm:py-3.5 md:text-base"
           >
             Get Started
-          </MagneticButton>
-          <MagneticButton 
-            href="#how-it-works" 
-            variant="outline" 
-            className="w-full min-h-12 px-6 sm:w-auto md:min-h-14 md:px-10"
+          </Link>
+          <Link
+            href="#how-it-works"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-brand-dark bg-transparent px-6 py-3 text-sm font-semibold text-brand-dark transition-all duration-300 hover:bg-brand-dark hover:text-white sm:w-auto sm:px-8 sm:py-3.5 md:text-base"
           >
             See How It Works
-          </MagneticButton>
+          </Link>
         </motion.div>
       </div>
     </section>

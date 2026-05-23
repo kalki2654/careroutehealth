@@ -42,7 +42,7 @@ const pathways = [
 
 export function PathwayCards() {
   return (
-    <section id="pathways" className="site-grid scroll-mt-24 bg-white py-12 sm:py-16 md:py-24">
+    <section id="pathways" className="site-grid scroll-mt-24 bg-white py-12 sm:py-16 md:py-20 lg:py-24">
       <SectionReveal>
         <div className="mb-3 text-center sm:mb-4">
           <p className="text-xs font-semibold uppercase tracking-wider text-brand-coral sm:text-sm">
@@ -50,8 +50,8 @@ export function PathwayCards() {
           </p>
         </div>
         
-        <div className="mb-10 text-center sm:mb-12 md:mb-16">
-          <h2 className="font-serif text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl md:text-5xl md:leading-tight">
+        <div className="mb-10 text-center sm:mb-12 md:mb-14 lg:mb-16">
+          <h2 className="font-serif text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl md:text-4xl lg:text-5xl md:leading-tight">
             Two healthcare journeys. One trusted guide.
           </h2>
           <p className="mx-auto mt-3 max-w-3xl px-4 text-sm leading-relaxed text-brand-dark/70 sm:mt-4 sm:text-base md:text-lg">
@@ -59,7 +59,7 @@ export function PathwayCards() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 md:gap-10">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:gap-10">
           {pathways.map((pathway, index) => {
             const Icon = pathway.icon;
             const isUSA = pathway.id === "usa";
@@ -71,7 +71,7 @@ export function PathwayCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group relative overflow-hidden rounded-2xl border border-brand-border bg-brand-cream p-6 shadow-soft transition-all duration-300 hover:shadow-lift sm:p-8 md:p-10"
+                className="group relative overflow-hidden rounded-2xl border border-brand-border bg-brand-cream p-6 shadow-soft transition-all duration-300 hover:shadow-lift sm:p-8 lg:p-10"
               >
                 <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl sm:mb-6 sm:h-14 sm:w-14 ${isUSA ? "bg-brand-coral/10" : "bg-brand-mint"}`}>
                   <Icon className={`h-6 w-6 sm:h-7 sm:w-7 ${isUSA ? "text-brand-coral" : "text-brand-dark"}`} strokeWidth={1.5} />
@@ -81,7 +81,7 @@ export function PathwayCards() {
                   {pathway.eyebrow}
                 </p>
 
-                <h3 className="mb-3 font-serif text-xl font-semibold leading-tight text-brand-dark sm:mb-4 sm:text-2xl md:text-3xl">
+                <h3 className="mb-3 font-serif text-xl font-semibold leading-tight text-brand-dark sm:mb-4 sm:text-2xl lg:text-3xl">
                   {pathway.title}
                 </h3>
 
@@ -100,7 +100,7 @@ export function PathwayCards() {
 
                 <Link
                   href={pathway.href}
-                  className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 sm:w-auto sm:px-6 ${
+                  className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 sm:w-auto sm:px-6 sm:py-3.5 ${
                     isUSA
                       ? "bg-brand-coral text-white hover:bg-brand-coral/90"
                       : "bg-brand-dark text-white hover:bg-brand-dark/90"

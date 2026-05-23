@@ -40,21 +40,21 @@ export function HomeFAQ() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section id="faq" className="site-grid scroll-mt-24 bg-white py-16 md:py-24">
+    <section id="faq" className="site-grid scroll-mt-24 bg-white py-12 sm:py-16 md:py-20 lg:py-24">
       <SectionReveal>
-        <div className="mb-4 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-brand-coral">
+        <div className="mb-3 text-center sm:mb-4">
+          <p className="text-xs font-semibold uppercase tracking-wider text-brand-coral sm:text-sm">
             Questions, answered
           </p>
         </div>
         
-        <div className="mb-12 text-center md:mb-16">
-          <h2 className="font-serif text-3xl font-semibold text-brand-dark md:text-5xl">
+        <div className="mb-10 text-center sm:mb-12 md:mb-14">
+          <h2 className="font-serif text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl md:text-4xl lg:text-5xl">
             Everything you're wondering about
           </h2>
         </div>
 
-        <div className="mx-auto max-w-3xl space-y-4">
+        <div className="mx-auto max-w-3xl space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             
@@ -64,21 +64,23 @@ export function HomeFAQ() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
-                transition={{ duration: 0.5, delay: index * 0.06 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="overflow-hidden rounded-xl border border-brand-border bg-brand-cream shadow-soft"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                  className="flex w-full items-start justify-between gap-4 p-6 text-left transition-colors hover:bg-white/50 md:p-8"
+                  className="flex w-full items-start justify-between gap-4 p-5 text-left transition-colors hover:bg-white/50 sm:p-6 md:p-7"
                   aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
                 >
-                  <span className="font-serif text-lg font-semibold text-brand-dark md:text-xl">
+                  <span className="font-serif text-base font-semibold leading-snug text-brand-dark sm:text-lg md:text-xl">
                     {faq.question}
                   </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-mint text-brand-dark"
+                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-mint text-brand-dark sm:mt-1"
+                    aria-hidden="true"
                   >
                     <Plus className="h-4 w-4" strokeWidth={2} />
                   </motion.span>
@@ -87,14 +89,15 @@ export function HomeFAQ() {
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      id={`faq-answer-${index}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="border-t border-brand-border px-6 pb-6 pt-4 md:px-8 md:pb-8">
-                        <p className="text-sm leading-relaxed text-brand-dark/75 md:text-base">
+                      <div className="border-t border-brand-border px-5 pb-5 pt-4 sm:px-6 sm:pb-6 md:px-7 md:pb-7">
+                        <p className="text-sm leading-relaxed text-brand-dark/75 sm:text-base md:leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>
