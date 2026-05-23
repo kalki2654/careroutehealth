@@ -1,9 +1,9 @@
 export const navLinks = [
-  { href: "/#how", label: "How It Works" },
-  { href: "/#treatments", label: "Treatments" },
-  { href: "/#standards", label: "Our Standards" },
-  { href: "/#assessment", label: "Cost Estimate" },
-  { href: "/#faqs", label: "FAQs" }
+  { href: "/", label: "Home" },
+  { href: "/usa-health-insurance", label: "USA Health Insurance" },
+  { href: "/india-health-membership", label: "India Membership" },
+  { href: "/#how-it-works", label: "How It Works" },
+  { href: "/#faq", label: "FAQ" }
 ];
 
 export const heroBadges = [

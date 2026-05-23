@@ -1,26 +1,22 @@
-import { Hero } from "@/components/sections/Hero";
-import { StatsSection } from "@/components/sections/StatsSection";
-import { StandardsSection } from "@/components/sections/StandardsSection";
-import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
-import { ComparisonTable } from "@/components/sections/ComparisonTable";
-import { TreatmentGrid } from "@/components/sections/TreatmentGrid";
-import { Assessment } from "@/components/sections/Assessment";
-import { FAQAccordion } from "@/components/sections/FAQAccordion";
-import { FooterCTA } from "@/components/sections/FooterCTA";
+import { HomeHero } from "@/components/sections/HomeHero";
+import { PathwayCards } from "@/components/sections/PathwayCards";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { BenefitsByAudience } from "@/components/sections/BenefitsByAudience";
+import { TrustSection } from "@/components/sections/TrustSection";
+import { HomeFAQ } from "@/components/sections/HomeFAQ";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SiteFooter } from "@/components/sections/SiteFooter";
 
 export default function Home() {
   return (
     <main className="pb-16 md:pb-0">
-      <Hero />
-      <StatsSection />
-      <StandardsSection />
-      <ProcessTimeline />
-      <ComparisonTable />
-      <TreatmentGrid />
-      <Assessment />
-      <FAQAccordion />
-      <FooterCTA />
+      <HomeHero />
+      <PathwayCards />
+      <HowItWorks />
+      <BenefitsByAudience />
+      <TrustSection />
+      <HomeFAQ />
+      <FinalCTA />
       <SiteFooter />
     </main>
   );
