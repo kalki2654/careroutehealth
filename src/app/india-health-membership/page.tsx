@@ -136,26 +136,26 @@ const notFor = [
 ];
 
 const foundingBenefits = [
-  "Your rate locked in forever - prices will never increase for you, even as we add more services",
-  "3 months free when you pay annually (founding members only - not available at launch)",
+  "Your rate locked in forever—prices will never increase for you, even as we add more services",
+  "3 months free when you pay annually (founding members only—not available at launch)",
   "First access to book appointments at our partner hospitals before the general public",
-  "Founding Member badge on your account - recognised by all our partner hospitals",
+  "Founding Member badge on your account—recognized by all our partner hospitals",
   "Direct access to our founder for your first guidance call"
 ];
 
 const trustPoints = [
-  "We DISCLOSE every rupee we earn from hospitals",
-  "We NEVER recommend a hospital based on commission rate - only patient outcomes",
-  "We PUBLISH real cost ranges - not inflated estimates designed to upsell you",
-  "We STAY with you 30 days after you return home - not just until the bill is paid",
-  "We are applying for NABH Medical Value Travel Facilitator accreditation - India's official quality standard for patient facilitators"
+  "We disclose every rupee we earn from hospitals",
+  "We never recommend a hospital based on commission rate—only patient outcomes",
+  "We publish real cost ranges—not inflated estimates designed to upsell you",
+  "We stay with you 30 days after you return home—not just until the bill is paid",
+  "We're applying for NABH Medical Value Travel Facilitator accreditation—India's official quality standard for patient facilitators"
 ];
 
 const faqs = [
   {
     question: "Is this health insurance?",
     answer:
-      "No. This is a service membership - not insurance. We coordinate and guide your treatment in India. You pay the hospital directly for your treatment. This membership covers our coordination services only."
+      "No. This is a service membership—not insurance. We coordinate and guide your treatment in India. You pay the hospital directly for your treatment. This membership covers our coordination services only."
   },
   {
     question: "Do I have to travel to India to use it?",
@@ -170,12 +170,12 @@ const faqs = [
   {
     question: "What happens when I actually need treatment?",
     answer:
-      "You message your case manager on WhatsApp. We take it from there - hospital shortlisting, cost estimate, appointment booking, visa letter, accommodation, on-ground support, follow-up. All included in your membership."
+      "You message your case manager on WhatsApp. We take it from there—hospital shortlisting, cost estimate, appointment booking, visa letter, accommodation, on-ground support, follow-up. All included in your membership."
   },
   {
     question: "How is this different from just contacting a hospital directly?",
     answer:
-      "Hospitals have their own sales teams. They quote high, they don't compare options for you, and they disappear after you're discharged. We work for YOU - not the hospital."
+      "Hospitals have their own sales teams. They quote high, they don't compare options for you, and they disappear after you're discharged. We work for you—not the hospital."
   },
   {
     question: "What if I join the waitlist and then change my mind?",
@@ -189,7 +189,7 @@ const faqs = [
   },
   {
     question: "How do I cancel my membership?",
-    answer: "Cancel anytime with 30 days notice - no questions asked, no cancellation fees."
+    answer: "Cancel anytime with 30 days notice—no questions asked, no cancellation fees."
   }
 ];
 
@@ -440,17 +440,17 @@ export default function IndiaHealthMembershipPage() {
             <div className="lg:col-span-5">
               <SectionLabel>Limited Offer</SectionLabel>
               <h2 className="font-serif text-[2.35rem] font-semibold leading-[0.95] text-white text-balance md:text-[clamp(3.2rem,6vw,6.5rem)] md:leading-[0.88]">
-                Become a Founding Member. Lock In Up to 40% Off - Forever.
+                Become a Founding Member. Lock in up to 40% off—forever.
               </h2>
               <p className="mt-5 text-base leading-7 text-white/76 md:text-lg md:leading-8">
-                We are launching India Health Access Membership to our first 200 founding members only.
+                We're launching India Health Access Membership to our first 200 founding members only.
               </p>
               <div className="mt-6 rounded-2xl border border-white/15 bg-white/8 p-4">
                 <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-coral">Current Waitlist Count</p>
                 <p className="mt-2 font-serif text-4xl font-semibold text-white">{waitlistCount}</p>
               </div>
               <CTAButton className="mt-6 w-full bg-brand-coral text-brand-ink sm:w-auto">
-                Reserve My Founding Member Spot - It&apos;s Free
+                Join the Free Waitlist
               </CTAButton>
             </div>
             <div className="lg:col-span-7">
@@ -464,8 +464,7 @@ export default function IndiaHealthMembershipPage() {
                 ))}
               </div>
               <p className="mt-6 text-sm font-bold leading-6 text-white/70 md:text-base md:leading-7">
-                This offer expires when we hit 200 waitlist signups or at our official launch date - whichever comes
-                first.
+                This offer expires when we hit 200 waitlist signups or at our official launch date—whichever comes first.
               </p>
             </div>
           </div>
@@ -476,10 +475,9 @@ export default function IndiaHealthMembershipPage() {
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
             <SectionLabel>Why Trust Us</SectionLabel>
-            <SectionHeading>Built on Radical Transparency. Not Commission Chasing.</SectionHeading>
+            <SectionHeading>Built on radical transparency. Not commission chasing.</SectionHeading>
             <p className="mt-5 text-base leading-7 text-brand-dark/72 md:text-lg md:leading-8">
-              Most medical tourism agents earn hidden commissions from hospitals and never tell you. We do things
-              differently:
+              Most medical tourism agents earn hidden commissions from hospitals and never tell you. We do things differently:
             </p>
             <div className="mt-6 grid gap-3">
               {trustPoints.map((point) => (
@@ -502,15 +500,13 @@ export default function IndiaHealthMembershipPage() {
                 </div>
               </div>
               <p className="text-base leading-7 text-white/82 md:text-lg md:leading-8">
-                Hi, I&apos;m Vaibhav Patil - founder of CareRoute Health.
+                Hi, I'm Vaibhav Patil—founder of CareRoute Health.
               </p>
               <p className="mt-4 text-base leading-7 text-white/82 md:text-lg md:leading-8">
-                I started this because international patients deserve honest guidance - not just another broker chasing
-                hospital commissions.
+                I started this because international patients deserve honest guidance—not just another broker chasing hospital commissions.
               </p>
               <p className="mt-4 text-base leading-7 text-white/82 md:text-lg md:leading-8">
-                I personally oversee every patient case. Our support channels are built around fast, human responses
-                from the first guidance request onward.
+                I personally oversee every patient case. Our support is built around fast, human responses from the first question onward.
               </p>
             </div>
           </aside>
@@ -521,7 +517,7 @@ export default function IndiaHealthMembershipPage() {
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <SectionLabel>Questions Answered</SectionLabel>
-            <SectionHeading>Everything You&apos;re Wondering About</SectionHeading>
+            <SectionHeading>Everything you're wondering about</SectionHeading>
           </div>
           <div className="lg:col-span-7">
             {faqs.map((faq) => (
@@ -544,7 +540,7 @@ export default function IndiaHealthMembershipPage() {
           <div className="lg:col-span-5">
             <SectionLabel>Join the Waitlist</SectionLabel>
             <h2 className="font-serif text-[2.35rem] font-semibold leading-[0.95] text-white text-balance md:text-[clamp(3.2rem,6vw,6.5rem)] md:leading-[0.88]">
-              Reserve Your Founding Member Spot. 100% Free. No Payment Required.
+              Reserve your Founding Member spot. 100% free. No payment required.
             </h2>
             <p className="mt-5 text-base leading-7 text-white/74 md:text-lg md:leading-8">
               200 spots only. {waitlistCount} spots already reserved.
