@@ -75,26 +75,26 @@ export function IntakeModal({ isOpen, onClose, initialPath = null }: IntakeModal
           />
 
           {/* Modal */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none overflow-y-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-lift pointer-events-auto"
+              className="relative w-full max-w-2xl my-8 bg-white rounded-2xl shadow-lift pointer-events-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close button */}
               <button
                 onClick={handleClose}
-                className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-brand-cream text-brand-dark transition-colors hover:bg-brand-dark hover:text-white"
+                className="sticky right-4 top-4 z-10 ml-auto mr-4 mt-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand-cream text-brand-dark transition-colors hover:bg-brand-dark hover:text-white"
                 aria-label="Close"
               >
                 <X className="h-5 w-5" strokeWidth={1.5} />
               </button>
 
               {/* Content */}
-              <div className="p-6 md:p-10">
+              <div className="px-6 pb-6 md:px-10 md:pb-10">
                 <AnimatePresence mode="wait">
                   {step === "path" && (
                     <PathSelection key="path" onSelect={handlePathSelect} />
