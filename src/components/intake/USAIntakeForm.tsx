@@ -35,7 +35,7 @@ export function USAIntakeForm({ onSubmit, onBack }: USAIntakeFormProps) {
     onSubmit();
   };
 
-  const isValid = formData.helpWith && formData.timing && formData.name && formData.email;
+  const isValid = formData.helpWith && formData.timing && formData.insuranceProvider && formData.name && formData.email && formData.phone;
 
   return (
     <motion.div
@@ -129,14 +129,15 @@ export function USAIntakeForm({ onSubmit, onBack }: USAIntakeFormProps) {
           </div>
         </div>
 
-        {/* Insurance Provider (Optional) */}
+        {/* Insurance Provider */}
         <div>
           <label htmlFor="insurance" className="mb-2 block text-sm font-semibold text-brand-dark">
-            Insurance provider <span className="font-normal text-brand-dark/50">(optional)</span>
+            Insurance provider
           </label>
           <input
             type="text"
             id="insurance"
+            required
             value={formData.insuranceProvider}
             onChange={(e) => setFormData({ ...formData, insuranceProvider: e.target.value })}
             placeholder="e.g., Blue Cross, Aetna, UnitedHealthcare"
@@ -176,22 +177,20 @@ export function USAIntakeForm({ onSubmit, onBack }: USAIntakeFormProps) {
           />
         </div>
 
-        {/* Phone (Optional) */}
+        {/* Phone */}
         <div>
           <label htmlFor="phone" className="mb-2 block text-sm font-semibold text-brand-dark">
-            Phone or WhatsApp <span className="font-normal text-brand-dark/50">(optional)</span>
+            Phone or WhatsApp
           </label>
           <input
             type="tel"
             id="phone"
+            required
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="+1 (555) 000-0000"
             className="w-full rounded-lg border-2 border-brand-border bg-white px-4 py-3 text-sm text-brand-dark placeholder:text-brand-dark/40 focus:border-brand-coral focus:outline-none focus:ring-2 focus:ring-brand-coral/20"
           />
-          <p className="mt-2 text-xs text-brand-dark/60">
-            We'll use this if email doesn't work or if you prefer a quick call
-          </p>
         </div>
 
         {/* Submit Button */}

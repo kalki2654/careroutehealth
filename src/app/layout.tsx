@@ -2,7 +2,6 @@
 import type { Metadata, Viewport } from "next";
 import { SmoothScroll } from "@/components/core/SmoothScroll";
 import { Navbar } from "@/components/sections/Navbar";
-import { AssessmentFloat } from "@/components/sections/AssessmentFloat";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -35,7 +34,6 @@ export default function RootLayout({
         <SmoothScroll>
           <Navbar />
           {children}
-          <AssessmentFloat />
         </SmoothScroll>
       </body>
     </html>

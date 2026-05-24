@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { PathSelection } from "./PathSelection";
@@ -20,15 +20,37 @@ interface IntakeModalProps {
 export function IntakeModal({ isOpen, onClose, initialPath = null }: IntakeModalProps) {
   const [step, setStep] = useState<IntakeStep>(initialPath ? `${initialPath}-form` as IntakeStep : "path");
   const [selectedPath, setSelectedPath] = useState<PathType>(initialPath);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      window.dispatchEvent(new CustomEvent("lenis-toggle", { detail: { stop: true } }));
     } else {
       document.body.style.overflow = "";
+      window.dispatchEvent(new CustomEvent("lenis-toggle", { detail: { stop: false } }));
     }
     return () => {
       document.body.style.overflow = "";
+      window.dispatchEvent(new CustomEvent("lenis-toggle", { detail: { stop: false } }));
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const el = modalRef.current;
+    if (!el) return;
+
+    const stopPropagation = (e: WheelEvent | TouchEvent) => {
+      e.stopPropagation();
+    };
+
+    el.addEventListener("wheel", stopPropagation);
+    el.addEventListener("touchmove", stopPropagation);
+
+    return () => {
+      el.removeEventListener("wheel", stopPropagation);
+      el.removeEventListener("touchmove", stopPropagation);
     };
   }, [isOpen]);
 
@@ -71,20 +93,18 @@ export function IntakeModal({ isOpen, onClose, initialPath = null }: IntakeModal
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 bg-brand-dark/40 backdrop-blur-sm"
+            onClick={handleClose}
           />
 
           {/* Modal */}
-          <div
-            className="fixed inset-0 z-50 overflow-y-auto"
-            onClick={handleClose}
-          >
-            <div className="flex min-h-full items-center justify-center p-4 pointer-events-none">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
             <motion.div
+              ref={modalRef}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-2xl my-8 bg-white rounded-2xl shadow-lift pointer-events-auto"
+              className="relative w-full max-w-2xl max-h-[85vh] my-8 bg-white rounded-2xl shadow-lift pointer-events-auto overflow-y-auto overscroll-contain"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close button */}
@@ -114,7 +134,6 @@ export function IntakeModal({ isOpen, onClose, initialPath = null }: IntakeModal
                 </AnimatePresence>
               </div>
             </motion.div>
-            </div>
           </div>
         </>
       )}

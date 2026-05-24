@@ -36,7 +36,7 @@ export function IndiaIntakeForm({ onSubmit, onBack }: IndiaIntakeFormProps) {
     onSubmit();
   };
 
-  const isValid = formData.supporting && formData.helpWith && formData.country && formData.name && formData.email;
+  const isValid = formData.supporting && formData.helpWith && formData.country && formData.cityInIndia && formData.name && formData.email && formData.phone;
 
   return (
     <motion.div
@@ -151,11 +151,12 @@ export function IndiaIntakeForm({ onSubmit, onBack }: IndiaIntakeFormProps) {
         {/* Family's City in India */}
         <div>
           <label htmlFor="city" className="mb-2 block text-sm font-semibold text-brand-dark">
-            Family's city in India <span className="font-normal text-brand-dark/50">(optional)</span>
+            Family's city in India
           </label>
           <input
             type="text"
             id="city"
+            required
             value={formData.cityInIndia}
             onChange={(e) => setFormData({ ...formData, cityInIndia: e.target.value })}
             placeholder="e.g., Mumbai, Delhi, Bangalore"
@@ -195,22 +196,20 @@ export function IndiaIntakeForm({ onSubmit, onBack }: IndiaIntakeFormProps) {
           />
         </div>
 
-        {/* Phone (Optional) */}
+        {/* Phone */}
         <div>
           <label htmlFor="phone" className="mb-2 block text-sm font-semibold text-brand-dark">
-            Phone or WhatsApp <span className="font-normal text-brand-dark/50">(optional)</span>
+            Phone or WhatsApp
           </label>
           <input
             type="tel"
             id="phone"
+            required
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="+44 7700 900000"
             className="w-full rounded-lg border-2 border-brand-border bg-white px-4 py-3 text-sm text-brand-dark placeholder:text-brand-dark/40 focus:border-brand-coral focus:outline-none focus:ring-2 focus:ring-brand-coral/20"
           />
-          <p className="mt-2 text-xs text-brand-dark/60">
-            We'll use this if email doesn't work or if you prefer WhatsApp
-          </p>
         </div>
 
         {/* Submit Button */}

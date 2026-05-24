@@ -1,9 +1,11 @@
 "use client";
 
 import Lenis from "@studio-freight/lenis";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
+  const lenisRef = useRef<Lenis | null>(null);
+
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -22,6 +24,8 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
       gestureOrientation: "vertical"
     });
 
+    lenisRef.current = lenis;
+
     let rafId = 0;
 
     const raf = (time: number) => {
@@ -31,9 +35,21 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
 
     rafId = requestAnimationFrame(raf);
 
+    const handleToggle = (e: CustomEvent) => {
+      if (e.detail?.stop) {
+        lenis.stop();
+      } else {
+        lenis.start();
+      }
+    };
+
+    window.addEventListener("lenis-toggle", handleToggle as EventListener);
+
     return () => {
       cancelAnimationFrame(rafId);
+      window.removeEventListener("lenis-toggle", handleToggle as EventListener);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
