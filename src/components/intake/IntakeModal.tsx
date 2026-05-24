@@ -71,11 +71,14 @@ export function IntakeModal({ isOpen, onClose, initialPath = null }: IntakeModal
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 bg-brand-dark/40 backdrop-blur-sm"
-            onClick={handleClose}
           />
 
           {/* Modal */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none overflow-y-auto">
+          <div
+            className="fixed inset-0 z-50 overflow-y-auto"
+            onClick={handleClose}
+          >
+            <div className="flex min-h-full items-center justify-center p-4 pointer-events-none">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -111,6 +114,7 @@ export function IntakeModal({ isOpen, onClose, initialPath = null }: IntakeModal
                 </AnimatePresence>
               </div>
             </motion.div>
+            </div>
           </div>
         </>
       )}
