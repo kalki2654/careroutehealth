@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, FileText, Shield } from "lucide-react";
-import Link from "next/link";
 import { SectionReveal } from "@/components/core/SectionReveal";
+
+interface USASupportDetailsProps {
+  onOpenIntake: (path?: "usa" | "india") => void;
+}
 
 const blocks = [
   {
@@ -23,7 +26,7 @@ const blocks = [
   }
 ];
 
-export function USASupportDetails() {
+export function USASupportDetails({ onOpenIntake }: USASupportDetailsProps) {
   return (
     <section className="site-grid bg-white py-16 md:py-24">
       <SectionReveal>
@@ -76,13 +79,13 @@ export function USASupportDetails() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <Link
-            href="/usa-health-insurance"
+          <button
+            onClick={() => onOpenIntake("usa")}
             className="group inline-flex items-center gap-2 rounded-full bg-brand-coral px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-coral/90 md:text-base"
           >
             Get USA Support
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </button>
         </motion.div>
       </SectionReveal>
     </section>

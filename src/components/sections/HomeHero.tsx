@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export function HomeHero() {
+interface HomeHeroProps {
+  onOpenIntake: (path?: "usa" | "india") => void;
+}
+
+export function HomeHero({ onOpenIntake }: HomeHeroProps) {
   return (
     <section className="site-grid pt-0 md:pt-14">
       <div aria-hidden="true" className="mb-[14px] md:hidden" style={{ height: "var(--mobile-nav-clearance)" }} />
@@ -43,12 +47,12 @@ export function HomeHero() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-7 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4 md:mt-9"
         >
-          <Link
-            href="#pathways"
+          <button
+            onClick={() => onOpenIntake()}
             className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:bg-brand-dark/90 sm:w-auto sm:px-8 sm:py-3.5 md:text-base"
           >
-            Find Your Path
-          </Link>
+            Get Started
+          </button>
           <Link
             href="#how-it-works"
             className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-brand-dark bg-transparent px-6 py-3 text-sm font-semibold text-brand-dark transition-all duration-300 hover:bg-brand-dark hover:text-white sm:w-auto sm:px-8 sm:py-3.5 md:text-base"

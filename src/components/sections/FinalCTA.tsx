@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { SectionReveal } from "@/components/core/SectionReveal";
 
-export function FinalCTA() {
+interface FinalCTAProps {
+  onOpenIntake: (path?: "usa" | "india") => void;
+}
+
+export function FinalCTA({ onOpenIntake }: FinalCTAProps) {
   return (
     <section className="site-grid bg-brand-cream py-12 sm:py-16 md:py-20 lg:py-24">
       <SectionReveal>
@@ -23,13 +26,13 @@ export function FinalCTA() {
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto"
             >
-              <Link
-                href="/usa-health-insurance"
+              <button
+                onClick={() => onOpenIntake("usa")}
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-coral px-6 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:bg-brand-coral/90 hover:shadow-lift sm:w-auto sm:px-8 sm:py-3.5 md:text-base"
               >
                 USA Support
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </button>
             </motion.div>
 
             <motion.div
@@ -37,13 +40,13 @@ export function FinalCTA() {
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto"
             >
-              <Link
-                href="/india-health-membership"
+              <button
+                onClick={() => onOpenIntake("india")}
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:bg-brand-dark/90 hover:shadow-lift sm:w-auto sm:px-8 sm:py-3.5 md:text-base"
               >
                 India Membership
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </button>
             </motion.div>
           </div>
 

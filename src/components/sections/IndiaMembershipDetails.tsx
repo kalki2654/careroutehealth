@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Globe2, TrendingUp } from "lucide-react";
-import Link from "next/link";
 import { SectionReveal } from "@/components/core/SectionReveal";
+
+interface IndiaMembershipDetailsProps {
+  onOpenIntake: (path?: "usa" | "india") => void;
+}
 
 const blocks = [
   {
@@ -23,7 +26,7 @@ const blocks = [
   }
 ];
 
-export function IndiaMembershipDetails() {
+export function IndiaMembershipDetails({ onOpenIntake }: IndiaMembershipDetailsProps) {
   return (
     <section className="site-grid bg-brand-cream py-16 md:py-24">
       <SectionReveal>
@@ -79,13 +82,13 @@ export function IndiaMembershipDetails() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <Link
-            href="/india-health-membership"
+          <button
+            onClick={() => onOpenIntake("india")}
             className="group inline-flex items-center gap-2 rounded-full bg-brand-dark px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-dark/90 md:text-base"
           >
-            Learn About India Membership
+            Get India Support
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </button>
         </motion.div>
       </SectionReveal>
     </section>

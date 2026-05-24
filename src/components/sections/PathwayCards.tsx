@@ -5,9 +5,13 @@ import { ArrowRight, Building2, Heart, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { SectionReveal } from "@/components/core/SectionReveal";
 
+interface PathwayCardsProps {
+  onOpenIntake: (path?: "usa" | "india") => void;
+}
+
 const pathways = [
   {
-    id: "usa",
+    id: "usa" as const,
     eyebrow: "Living in the U.S. as an expat, student, or working professional",
     title: "Stop guessing. Start understanding your healthcare.",
     body: "Insurance terms are confusing. Bills are unpredictable. You're not sure if you should go to the ER or wait. CareRoute helps you figure out what your plan actually covers, where to go for care, what it might cost, and what to do when a bill doesn't make sense.",
@@ -19,11 +23,12 @@ const pathways = [
       "Find lower-cost options when they're safe and available",
       "Get help reviewing bills that feel wrong or too high"
     ],
-    cta: "Learn About USA Support",
+    cta: "Get Started",
+    learnMore: "Learn More",
     href: "/usa-health-insurance"
   },
   {
-    id: "india",
+    id: "india" as const,
     eyebrow: "Supporting parents or family in India from abroad",
     title: "Make it easier to help your family from far away.",
     body: "When your parents need care and you're in another country, even small things feel hard. Appointments get missed. Follow-ups fall through. You're not sure what questions to ask. CareRoute helps you stay organized, get the right guidance, and feel more confident about the care your family is getting.",
@@ -35,12 +40,13 @@ const pathways = [
       "Ongoing coordination so nothing slips through the cracks",
       "A calmer, clearer way to support your family's health"
     ],
-    cta: "Learn About India Membership",
+    cta: "Get Started",
+    learnMore: "Learn More",
     href: "/india-health-membership"
   }
 ];
 
-export function PathwayCards() {
+export function PathwayCards({ onOpenIntake }: PathwayCardsProps) {
   return (
     <section id="pathways" className="site-grid scroll-mt-24 bg-white py-12 sm:py-16 md:py-20 lg:py-24">
       <SectionReveal>
@@ -98,17 +104,25 @@ export function PathwayCards() {
                   ))}
                 </ul>
 
-                <Link
-                  href={pathway.href}
-                  className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 sm:w-auto sm:px-6 sm:py-3.5 ${
-                    isUSA
-                      ? "bg-brand-coral text-white hover:bg-brand-coral/90"
-                      : "bg-brand-dark text-white hover:bg-brand-dark/90"
-                  }`}
-                >
-                  {pathway.cta}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <button
+                    onClick={() => onOpenIntake(pathway.id)}
+                    className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 sm:w-auto sm:px-6 sm:py-3.5 ${
+                      isUSA
+                        ? "bg-brand-coral text-white hover:bg-brand-coral/90"
+                        : "bg-brand-dark text-white hover:bg-brand-dark/90"
+                    }`}
+                  >
+                    {pathway.cta}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+                  <Link
+                    href={pathway.href}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-brand-dark/20 bg-transparent px-5 py-3 text-sm font-semibold text-brand-dark transition-all duration-300 hover:border-brand-dark/40 sm:w-auto sm:px-6 sm:py-3.5"
+                  >
+                    {pathway.learnMore}
+                  </Link>
+                </div>
 
                 <div className={`absolute -right-8 -top-8 h-32 w-32 rounded-full opacity-5 ${isUSA ? "bg-brand-coral" : "bg-brand-mint"}`} />
               </motion.article>

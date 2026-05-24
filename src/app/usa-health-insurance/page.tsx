@@ -6,6 +6,8 @@ import { TextReveal } from "@/components/ui/TextReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { SectionReveal } from "@/components/core/SectionReveal";
 import { SiteFooter } from "@/components/sections/SiteFooter";
+import { IntakeModal } from "@/components/intake/IntakeModal";
+import { useIntakeModal } from "@/hooks/useIntakeModal";
 
 const features = [
   {
@@ -36,6 +38,8 @@ const features = [
 ];
 
 export default function USAHealthInsurance() {
+  const { isOpen, initialPath, openModal, closeModal } = useIntakeModal();
+
   return (
     <main className="pb-16 md:pb-0">
       {/* Hero Section */}
@@ -74,7 +78,7 @@ export default function USAHealthInsurance() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-10"
           >
-            <MagneticButton href="#contact" variant="coral" className="min-h-12 px-8 md:min-h-14 md:px-10">
+            <MagneticButton onClick={() => openModal("usa")} variant="coral" className="min-h-12 px-8 md:min-h-14 md:px-10">
               Talk to Us
             </MagneticButton>
             <MagneticButton href="#features" variant="outline" className="min-h-12 px-8 md:min-h-14 md:px-10">
@@ -137,7 +141,7 @@ export default function USAHealthInsurance() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:mt-10">
-              <MagneticButton href="mailto:hello@careroute.health" variant="coral" className="min-h-12 px-8 md:min-h-14 md:px-10">
+              <MagneticButton onClick={() => openModal("usa")} variant="coral" className="min-h-12 px-8 md:min-h-14 md:px-10">
                 Get in Touch
               </MagneticButton>
               <MagneticButton href="/" variant="outline" className="min-h-12 px-8 md:min-h-14 md:px-10">
@@ -149,6 +153,7 @@ export default function USAHealthInsurance() {
       </section>
 
       <SiteFooter />
+      <IntakeModal isOpen={isOpen} onClose={closeModal} initialPath={initialPath} />
     </main>
   );
 }
