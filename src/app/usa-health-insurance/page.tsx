@@ -11,27 +11,27 @@ const features = [
   {
     icon: Shield,
     title: "Understand your insurance",
-    description: "Get clear explanations of your coverage, deductibles, copays, and out-of-pocket maximums before you need care"
+    description: "Know what your plan actually covers before you need care. We explain deductibles, copays, and out-of-pocket limits in plain English."
   },
   {
     icon: MapPin,
     title: "Know where to go",
-    description: "Learn when to visit the ER, urgent care, primary care doctor, or handle issues at home—saving time and money"
+    description: "ER, urgent care, or your doctor? We help you figure out the right place for your situation—and save money in the process."
   },
   {
     icon: DollarSign,
     title: "Estimate costs upfront",
-    description: "Get realistic cost estimates before your visit and understand what you'll actually pay out of pocket"
+    description: "Get a realistic idea of what you'll pay before your visit. No more guessing or surprise bills weeks later."
   },
   {
     icon: Building2,
     title: "Find in-network options",
-    description: "Locate lower-cost, in-network providers and facilities that accept your insurance"
+    description: "We help you find doctors and facilities that accept your insurance—so you pay less out of pocket."
   },
   {
     icon: FileText,
-    title: "Reduce surprise bills",
-    description: "Get help understanding and negotiating medical bills, and learn how to appeal denied claims"
+    title: "Handle surprise bills",
+    description: "Got a bill that doesn't make sense? We help you understand it, negotiate when possible, and appeal denied claims."
   }
 ];
 
@@ -55,7 +55,7 @@ export default function USAHealthInsurance() {
 
           <TextReveal
             as="h1"
-            text="Navigate U.S. healthcare with confidence"
+            text="Stop guessing. Start understanding your healthcare."
             className="mx-auto max-w-5xl font-serif text-[2.5rem] font-semibold leading-[0.95] tracking-tight text-brand-dark md:text-[clamp(3.5rem,8vw,6rem)] md:leading-[0.92] md:tracking-[-0.02em]"
           />
 
@@ -65,7 +65,7 @@ export default function USAHealthInsurance() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-brand-dark/75 md:mt-8 md:text-lg md:leading-relaxed"
           >
-            Understand your insurance, know where to go for care, estimate costs before you visit, and avoid surprise bills. CareRoute helps expats and international students make sense of the U.S. healthcare system.
+            U.S. healthcare is confusing. We help you understand your insurance, know where to go, estimate costs before you visit, and avoid surprise bills.
           </motion.p>
 
           <motion.div
@@ -75,10 +75,10 @@ export default function USAHealthInsurance() {
             className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-10"
           >
             <MagneticButton href="#contact" variant="coral" className="min-h-12 px-8 md:min-h-14 md:px-10">
-              Get Started
+              Talk to Us
             </MagneticButton>
             <MagneticButton href="#features" variant="outline" className="min-h-12 px-8 md:min-h-14 md:px-10">
-              Learn More
+              See How We Help
             </MagneticButton>
           </motion.div>
         </div>
@@ -89,10 +89,10 @@ export default function USAHealthInsurance() {
         <SectionReveal>
           <div className="mb-12 text-center md:mb-16">
             <h2 className="font-serif text-3xl font-semibold text-brand-dark md:text-5xl">
-              How we help
+              What we help with
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-brand-dark/70 md:text-lg">
-              Clear guidance for navigating U.S. health insurance and healthcare
+              Simple guidance for the parts of U.S. healthcare that confuse everyone
             </p>
           </div>
 
@@ -130,15 +130,15 @@ export default function USAHealthInsurance() {
         <SectionReveal>
           <div className="rounded-2xl border border-brand-border bg-white p-8 text-center md:p-16">
             <h2 className="font-serif text-3xl font-semibold text-brand-dark md:text-5xl">
-              Ready to navigate U.S. healthcare with confidence?
+              Ready to make sense of your healthcare?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-brand-dark/70 md:mt-6 md:text-lg">
-              Get personalized guidance for your insurance and healthcare needs
+              Let's talk about your insurance and what you need help with
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:mt-10">
               <MagneticButton href="mailto:hello@careroute.health" variant="coral" className="min-h-12 px-8 md:min-h-14 md:px-10">
-                Contact Us
+                Get in Touch
               </MagneticButton>
               <MagneticButton href="/" variant="outline" className="min-h-12 px-8 md:min-h-14 md:px-10">
                 Back to Home

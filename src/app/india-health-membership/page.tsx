@@ -32,11 +32,11 @@ export const metadata: Metadata = {
 const waitlistCount = "0 / 200";
 
 const problems = [
-  "NHS waiting lists stretching 12-18 months while you live in daily pain",
-  "$45,000 surgery bills in the USA even with insurance",
-  "Parents in India needing hospital care while you're thousands of miles away - helpless, anxious, unable to be there",
-  "No idea which hospital to trust, which doctor is actually good, or what the real cost should be",
-  "Calling hospitals that don't call back, getting different prices from different agents, never knowing if someone is being honest with you"
+  "NHS waiting lists stretching 12-18 months while you're in pain every day",
+  "$45,000 surgery bills in the USA—even with insurance",
+  "Your parents need hospital care in India, but you're thousands of miles away and don't know who to trust",
+  "No idea which hospital is actually good, which doctor knows what they're doing, or what a fair price should be",
+  "Calling hospitals that never call back, getting different prices from different people, never knowing if you're being lied to"
 ];
 
 const solutionPoints = [
@@ -223,17 +223,16 @@ export default function IndiaHealthMembershipPage() {
               Launching Soon
             </p>
             <h1 className="font-serif text-[3rem] font-semibold leading-[0.9] text-brand-dark text-balance md:text-[clamp(4.8rem,9vw,9rem)] md:leading-[0.82]">
-              Never Navigate India&apos;s Healthcare System Alone Again.
+              Help your family in India get the care they need.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-brand-dark/72 md:mt-7 md:text-xl md:leading-9">
-              Introducing India Health Access Membership - the world&apos;s first monthly plan that gives you and your
-              family priority access to trusted, affordable medical care in India.
+              A monthly membership that gives you and your family trusted medical guidance, hospital access, and patient coordination in India—so you don't have to figure it out alone.
             </p>
             <p className="mt-4 text-sm font-extrabold text-brand-dark md:text-base">
-              Launching Soon. Join the Waitlist Today - It&apos;s Free.
+              Launching soon. Join the free waitlist today.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <CTAButton className="w-full sm:w-auto">Reserve My Founding Member Spot</CTAButton>
+              <CTAButton className="w-full sm:w-auto">Join the Free Waitlist</CTAButton>
             </div>
             <div className="mt-5 grid gap-2 text-xs font-bold text-brand-dark/74 sm:grid-cols-3 md:mt-7">
               <div className="flex min-h-11 items-center gap-2 rounded-full border border-brand-border bg-white px-4">
@@ -270,10 +269,9 @@ export default function IndiaHealthMembershipPage() {
         <div>
           <div className="max-w-4xl">
             <SectionLabel>Why This Exists</SectionLabel>
-            <SectionHeading>Healthcare is Broken for International Patients. You Deserve Better.</SectionHeading>
+            <SectionHeading>Healthcare shouldn't be this hard to figure out.</SectionHeading>
             <p className="mt-6 text-base leading-7 text-brand-dark/72 md:text-lg md:leading-8">
-              If you live in the UK, USA, Canada, or Australia - or if your family is in India while you&apos;re abroad -
-              you already know this pain:
+              If you live in the UK, USA, Canada, or Australia—or if your family is in India while you're abroad—you already know:
             </p>
           </div>
           <div className="mt-8 grid gap-3 md:mt-10 md:grid-cols-2">
@@ -286,11 +284,10 @@ export default function IndiaHealthMembershipPage() {
           </div>
           <div className="mt-8 max-w-4xl rounded-[1.75rem] bg-brand-dark p-5 text-white md:mt-10 md:p-8">
             <p className="text-base leading-7 text-white/82 md:text-xl md:leading-9">
-              You&apos;re not alone. Over 700,000 patients every year choose India for world-class treatment at 70-90%
-              lower cost than the West.
+              You're not alone. Over 700,000 patients every year choose India for treatment—world-class care at 70-90% lower cost than the West.
             </p>
             <p className="mt-4 text-base font-bold leading-7 text-white md:text-xl md:leading-9">
-              The problem? Nobody is there to guide you through it properly - before, during, and after. Until now.
+              The problem? Nobody guides you through it properly—before, during, or after. Until now.
             </p>
           </div>
         </div>
