@@ -40,23 +40,23 @@ const problems = [
 ];
 
 const solutionPoints = [
-  "A trusted medical guide who knows India's healthcare system inside out",
-  "Priority access to pre-vetted, JCI-accredited hospitals across India",
-  "Real cost transparency - no inflated quotes, no hidden markups",
-  "End-to-end coordination when you need treatment - from first enquiry to 90-day post-treatment follow-up",
-  "24/7 WhatsApp support from a team that actually picks up"
+  "A trusted medical guide who knows India's healthcare system inside and out",
+  "Priority access to pre-vetted, quality hospitals across India",
+  "Real cost transparency—no inflated quotes, no hidden markups",
+  "End-to-end coordination from your first question to 90 days after treatment",
+  "24/7 WhatsApp support from a team that actually responds"
 ];
 
 const benefits = [
   {
     icon: Hospital,
     title: "PRE-VETTED HOSPITALS",
-    body: "Access our network of 20+ JCI and NABH-accredited partner hospitals across India - shortlisted for quality, not commission size."
+    body: "Access our network of 20+ quality partner hospitals across India—shortlisted for patient outcomes, not commission size."
   },
   {
     icon: DollarSign,
     title: "TRANSPARENT PRICING",
-    body: "Get real, written cost estimates before you commit to anything. We disclose everything - including what we earn from hospitals."
+    body: "Get real, written cost estimates before you commit. We disclose everything—including what we earn from hospitals."
   },
   {
     icon: ClipboardCheck,
@@ -71,12 +71,12 @@ const benefits = [
   {
     icon: MessageCircle,
     title: "24/7 WHATSAPP SUPPORT",
-    body: "Your dedicated case manager is on WhatsApp throughout your entire India stay - from landing to departure."
+    body: "Your dedicated case manager is on WhatsApp throughout your entire India stay—from landing to departure."
   },
   {
     icon: RefreshCw,
     title: "POST-TREATMENT FOLLOW-UP",
-    body: "We check in at Day 3, Day 14, and Day 30 after you return home. Your recovery matters to us long after the bill is paid."
+    body: "We check in at Day 3, Day 14, and Day 30 after you return home. Your recovery matters long after the bill is paid."
   }
 ];
 
@@ -123,16 +123,16 @@ const tiers = [
 
 const goodFit = [
   "You live in UK, USA, Canada, Australia, or any country with expensive or slow healthcare",
-  "You or a family member needs treatment and want honest guidance - not a sales pitch",
+  "You or a family member needs treatment and want honest guidance—not a sales pitch",
   "Your parents are in India and you manage their healthcare from abroad",
-  "You want to know the REAL cost of treatment in India before making any decision",
-  "You want one trusted person to handle everything - not 10 different agents quoting 10 different prices"
+  "You want to know the real cost of treatment in India before making any decision",
+  "You want one trusted person to handle everything—not 10 different people quoting 10 different prices"
 ];
 
 const notFor = [
-  "You are looking for health insurance that pays your medical bills",
-  "You want a one-time consultation only (we still offer that separately)",
-  "You are not serious about exploring treatment in India"
+  "You're looking for health insurance that pays your medical bills",
+  "You want a one-time consultation only (we offer that separately)",
+  "You're not serious about exploring treatment in India"
 ];
 
 const foundingBenefits = [
@@ -299,12 +299,12 @@ export default function IndiaHealthMembershipPage() {
             <SectionLabel>Introducing</SectionLabel>
             <SectionHeading>India Health Access Membership</SectionHeading>
             <p className="mt-5 font-serif text-2xl font-semibold leading-tight text-brand-dark md:text-4xl">
-              Your Personal Medical Guidance System - Every Month.
+              Your personal medical guide—every month.
             </p>
           </div>
           <div className="lg:col-span-7">
             <p className="text-base leading-7 text-brand-dark/74 md:text-lg md:leading-8">
-              India Health Access is a monthly membership that gives you and your family:
+              This membership gives you and your family:
             </p>
             <div className="mt-6 grid gap-3">
               {solutionPoints.map((point) => (
@@ -315,8 +315,7 @@ export default function IndiaHealthMembershipPage() {
               ))}
             </div>
             <p className="mt-6 text-base font-bold leading-7 text-brand-dark md:text-lg md:leading-8">
-              Think of it as having a trusted friend who is a medical expert, a travel coordinator, and a patient
-              advocate - all in one. For less than the cost of a dinner out each month.
+              Think of it as having a trusted friend who's a medical expert, travel coordinator, and patient advocate—all in one. For less than dinner out each month.
             </p>
           </div>
         </div>
@@ -326,7 +325,7 @@ export default function IndiaHealthMembershipPage() {
         <div>
           <div className="max-w-4xl">
             <SectionLabel>Member Benefits</SectionLabel>
-            <SectionHeading>Everything You Need. Nothing You Don&apos;t.</SectionHeading>
+            <SectionHeading>Everything you need. Nothing you don't.</SectionHeading>
           </div>
           <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
@@ -350,10 +349,10 @@ export default function IndiaHealthMembershipPage() {
           <div className="max-w-4xl">
             <SectionLabel>Membership Plans</SectionLabel>
             <h2 className="font-serif text-[2.35rem] font-semibold leading-[0.95] text-white text-balance md:text-[clamp(3.2rem,6vw,6.5rem)] md:leading-[0.88]">
-              3 Plans. One for Every Need. Full Pricing Revealed at Launch.
+              3 plans. One for every need. Full pricing revealed at launch.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/72 md:text-lg md:leading-8">
-              Join the waitlist today and lock in your Founding Member rate - up to 40% off regular pricing, guaranteed.
+              Join the waitlist today and lock in your Founding Member rate—up to 40% off regular pricing, guaranteed.
             </p>
           </div>
           <div className="mt-8 grid gap-4 md:mt-12 lg:grid-cols-3">
@@ -402,7 +401,7 @@ export default function IndiaHealthMembershipPage() {
         <div>
           <div className="max-w-4xl">
             <SectionLabel>Is This For You?</SectionLabel>
-            <SectionHeading>This Membership Was Built For You If...</SectionHeading>
+            <SectionHeading>This membership was built for you if...</SectionHeading>
           </div>
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
             <div className="rounded-[1.75rem] bg-white p-5 shadow-soft md:p-7">
