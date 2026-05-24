@@ -25,7 +25,7 @@ This implementation plan transforms the static India Health Membership subscript
     - Scale width from 0% to 100% based on scroll progress
     - _Requirements: 1.15_
   
-  - [ ] 1.3 Create ParallaxImage component
+  - [x] 1.3 Create ParallaxImage component
     - Implement `src/components/ui/ParallaxImage.tsx` with TypeScript
     - Use Framer Motion's `useScroll`, `useTransform`, and `useReducedMotion` hooks
     - Accept props: `src` (string), `alt` (string), `speed` (number, default 0.6), `className` (string)
@@ -34,7 +34,7 @@ This implementation plan transforms the static India Health Membership subscript
     - Disable parallax when `prefers-reduced-motion` is enabled
     - _Requirements: 1.8, 1.11.6_
   
-  - [ ] 1.4 Create StaggeredList component
+  - [x] 1.4 Create StaggeredList component
     - Implement `src/components/ui/StaggeredList.tsx` with TypeScript
     - Use Framer Motion's `motion.div` with variants pattern
     - Accept props: `children` (ReactNode[]), `staggerDelay` (number, default 0.08), `maxDelay` (number, default 0.8), `className` (string)
@@ -44,14 +44,14 @@ This implementation plan transforms the static India Health Membership subscript
     - Cap individual item delays at `maxDelay` to prevent excessive wait times
     - _Requirements: 1.7_
   
-  - [ ] 1.5 Write unit tests for CountUpAnimation
+  - [x] 1.5 Write unit tests for CountUpAnimation
     - Test component renders with correct initial value (0)
     - Test component animates to target value when scrolled into view
     - Test component respects `prefers-reduced-motion` setting
     - Test component displays prefix and suffix correctly
     - _Requirements: 1.4_
   
-  - [ ] 1.6 Write unit tests for ScrollProgress
+  - [ ] 1.6 Write unit tests for ScrollProgress9
     - Test component renders with fixed positioning
     - Test component updates scaleX based on scroll progress
     - Test component uses correct color and height props
@@ -71,7 +71,7 @@ This implementation plan transforms the static India Health Membership subscript
     - _Requirements: 1.7_
 
 - [ ] 2. Create utility hooks for performance and device detection
-  - [ ] 2.1 Create useDeviceCapability hook
+  - [x] 2.1 Create useDeviceCapability hook
     - Implement `src/hooks/useDeviceCapability.ts` with TypeScript
     - Detect hardware concurrency (navigator.hardwareConcurrency)
     - Detect device memory (navigator.deviceMemory)
@@ -81,7 +81,7 @@ This implementation plan transforms the static India Health Membership subscript
     - Set `shouldReduceAnimations` to true if low-end OR prefers-reduced-motion
     - _Requirements: 1.11.2, 1.11.6_
   
-  - [ ] 2.2 Create usePerformanceMonitor hook
+  - [x] 2.2 Create usePerformanceMonitor hook
     - Implement `src/hooks/usePerformanceMonitor.ts` with TypeScript
     - Use `requestAnimationFrame` to measure frame rate
     - Track frame count over 1-second intervals
