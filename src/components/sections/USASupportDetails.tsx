@@ -8,18 +8,18 @@ import { SectionReveal } from "@/components/core/SectionReveal";
 const blocks = [
   {
     icon: Shield,
-    title: "Before you seek care",
-    body: "We help you understand how your insurance works, whether a provider is likely to be in network, and what kind of care setting makes sense for your situation."
+    title: "Before you go",
+    body: "We help you understand what your insurance actually covers, whether a provider is in-network, and what kind of care makes sense for what you're dealing with."
   },
   {
     icon: Calendar,
     title: "When you need care now",
-    body: "If you are deciding between ER, urgent care, telehealth, or waiting for a primary care appointment, we help you think through the safest and most cost-aware next step."
+    body: "Should you go to the ER? Urgent care? Can this wait for a regular appointment? We help you think through the safest, smartest next step."
   },
   {
     icon: FileText,
-    title: "After you receive a bill",
-    body: "If a charge feels too high, unclear, or unexpected, we help you review it, understand the likely issue, and identify practical next steps for reducing or disputing it."
+    title: "After you get a bill",
+    body: "If a charge feels wrong, too high, or just confusing, we help you figure out what happened and what you can do about it."
   }
 ];
 
@@ -35,10 +35,10 @@ export function USASupportDetails() {
         
         <div className="mb-12 text-center md:mb-16">
           <h2 className="font-serif text-3xl font-semibold text-brand-dark md:text-5xl">
-            Help before care, during care, and after the bill arrives.
+            We help before, during, and after care
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-brand-dark/70 md:text-lg">
-            For many expats and international students, the hardest part of U.S. healthcare is not finding a hospital — it is understanding what to do, where to go, and how much it may cost. CareRoute helps you make smarter decisions before a problem becomes an expensive mistake.
+            The hardest part of U.S. healthcare isn't finding a hospital. It's knowing what to do, where to go, and how much it'll actually cost. We help you avoid expensive mistakes before they happen.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export function USASupportDetails() {
             href="/usa-health-insurance"
             className="group inline-flex items-center gap-2 rounded-full bg-brand-coral px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-coral/90 md:text-base"
           >
-            Get USA Care Guidance
+            Get USA Support
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>

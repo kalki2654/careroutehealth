@@ -8,18 +8,18 @@ import { SectionReveal } from "@/components/core/SectionReveal";
 const blocks = [
   {
     icon: Calendar,
-    title: "Routine care coordination",
-    body: "Get help with appointments, follow-ups, health questions, and staying on top of ongoing needs."
+    title: "Help with appointments and follow-ups",
+    body: "We help coordinate appointments, make sure follow-ups happen, and answer routine health questions so nothing falls through the cracks."
   },
   {
     icon: Globe2,
-    title: "Family support from abroad",
-    body: "Stay informed even when you are not physically there. CareRoute helps reduce the confusion that often comes with distance, time zones, and fragmented care."
+    title: "Support when you're far away",
+    body: "Distance, time zones, and language barriers make everything harder. We help you stay informed and involved even when you can't be there in person."
   },
   {
     icon: TrendingUp,
     title: "A clearer path forward",
-    body: "From the first question to the next appointment, we help families move through health decisions in a calmer, more structured way."
+    body: "From the first question to the next appointment, we help your family move through health decisions in a calmer, more organized way."
   }
 ];
 
@@ -35,13 +35,13 @@ export function IndiaMembershipDetails() {
         
         <div className="mb-12 text-center md:mb-16">
           <h2 className="font-serif text-3xl font-semibold text-brand-dark md:text-5xl">
-            Support for families managing healthcare in India from abroad.
+            Make it easier to care for family in India
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-brand-dark/70 md:text-lg">
-            When you live outside India, even small healthcare tasks for your parents or loved ones can become stressful. CareRoute helps families stay organized, supported, and more confident in routine care decisions and coordination.
+            When you live in another country, even small healthcare tasks for your parents feel overwhelming. We help you stay organized, get the right guidance, and feel more confident about the care they're getting.
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-sm font-medium text-brand-dark/80 md:text-base">
-            Membership includes ongoing support, appointment coordination, and guidance for routine healthcare needs.
+            Membership includes ongoing support, appointment help, and guidance for routine healthcare needs.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export function IndiaMembershipDetails() {
             href="/india-health-membership"
             className="group inline-flex items-center gap-2 rounded-full bg-brand-dark px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-dark/90 md:text-base"
           >
-            Explore India Membership
+            Learn About India Membership
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>

@@ -7,28 +7,28 @@ import { SectionReveal } from "@/components/core/SectionReveal";
 const trustPoints = [
   {
     icon: Shield,
-    title: "Safety-first guidance",
-    description: "We help you think through the safest next step, not just the cheapest one."
+    title: "Safety comes first",
+    description: "We help you think through the safest next step—not just the cheapest one."
   },
   {
     icon: DollarSign,
-    title: "Cost-aware recommendations",
-    description: "We focus on avoiding unnecessary spending while still protecting your health and wellbeing."
+    title: "We care about costs",
+    description: "We focus on helping you avoid unnecessary spending while still protecting your health."
   },
   {
     icon: Users,
-    title: "Human support",
-    description: "You are not left alone to decode insurance language, care settings, or family coordination challenges."
+    title: "Real people, real support",
+    description: "You're not left alone to decode insurance jargon or figure out care coordination on your own."
   },
   {
     icon: Globe2,
-    title: "Designed for cross-border families",
-    description: "CareRoute is built for people navigating healthcare across countries, systems, and time zones."
+    title: "Built for families across borders",
+    description: "We understand what it's like to navigate healthcare across countries, systems, and time zones."
   },
   {
     icon: Lock,
-    title: "Private by design",
-    description: "Your information is handled carefully and shared only as needed to support your care decisions."
+    title: "Your information stays private",
+    description: "We handle your health information carefully and only share what's needed to support your care."
   }
 ];
 
@@ -44,10 +44,10 @@ export function TrustSection() {
         
         <div className="mb-12 text-center md:mb-16">
           <h2 className="font-serif text-3xl font-semibold md:text-5xl">
-            Built for clarity, privacy, and better healthcare decisions.
+            Why families trust CareRoute
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-white/70 md:text-lg">
-            Healthcare feels overwhelming when the stakes are high and the system is unclear. CareRoute is designed to make decisions easier, information clearer, and support more human.
+            Healthcare feels overwhelming when the stakes are high and the system is confusing. We're here to make decisions easier, information clearer, and support more human.
           </p>
         </div>
 

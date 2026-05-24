@@ -11,10 +11,10 @@ export function FinalCTA() {
       <SectionReveal>
         <div className="rounded-2xl border border-brand-border bg-white p-6 text-center sm:p-8 md:p-12 lg:p-16">
           <h2 className="font-serif text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl md:text-4xl lg:text-5xl lg:leading-tight">
-            Choose the right support for where you are
+            Ready to get started?
           </h2>
           <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-brand-dark/70 sm:mt-4 sm:text-base md:mt-5 md:text-lg md:leading-relaxed">
-            Whether you need help navigating U.S. healthcare or supporting family in India, CareRoute is here to make the process clearer, calmer, and easier to manage.
+            Whether you need help with U.S. healthcare or support for family in India, we're here to make things clearer and easier.
           </p>
 
           <div className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:flex-row sm:justify-center sm:gap-4 md:mt-10">
@@ -48,7 +48,7 @@ export function FinalCTA() {
           </div>
 
           <p className="mt-6 text-xs text-brand-dark/60 sm:mt-7 sm:text-sm md:mt-8 md:text-base">
-            Clear guidance. Better decisions. Support you can trust.
+            Clear guidance. Better decisions. Support when you need it.
           </p>
         </div>
       </SectionReveal>

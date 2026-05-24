@@ -6,19 +6,19 @@ import { CheckCircle2, DollarSign, Globe2, Lock } from "lucide-react";
 const trustItems = [
   {
     icon: CheckCircle2,
-    text: "Clear guidance before you book care"
+    text: "Know what to expect before you book an appointment"
   },
   {
     icon: DollarSign,
-    text: "Cost transparency before and after treatment"
+    text: "Understand costs upfront, not after the bill arrives"
   },
   {
     icon: Globe2,
-    text: "Support for U.S. and India healthcare decisions"
+    text: "Get help whether you're in the U.S. or supporting family in India"
   },
   {
     icon: Lock,
-    text: "Private, family-first navigation"
+    text: "Your health information stays private"
   }
 ];
 

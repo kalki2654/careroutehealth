@@ -8,34 +8,34 @@ import { SectionReveal } from "@/components/core/SectionReveal";
 const pathways = [
   {
     id: "usa",
-    eyebrow: "For expats, students, and families living in the U.S.",
-    title: "Understand your coverage. Avoid costly mistakes.",
-    body: "U.S. healthcare can be difficult to navigate, especially when you are dealing with insurance terms, urgent decisions, and unexpected bills. CareRoute helps you understand what your plan covers, where to go for the right level of care, what you may pay out of pocket, and what to do if a medical bill does not look right.",
+    eyebrow: "Living in the U.S. as an expat, student, or working professional",
+    title: "Stop guessing. Start understanding your healthcare.",
+    body: "Insurance terms are confusing. Bills are unpredictable. You're not sure if you should go to the ER or wait. CareRoute helps you figure out what your plan actually covers, where to go for care, what it might cost, and what to do when a bill doesn't make sense.",
     icon: Building2,
     benefits: [
-      "Understand deductibles, copays, and in-network options in simple language",
-      "Decide between ER, urgent care, primary care, telehealth, or self-care",
-      "Get help estimating likely out-of-pocket costs before you go",
-      "Compare lower-cost options when available",
-      "Get support reviewing and reducing confusing or inflated bills"
+      "Understand your insurance in plain English—no jargon",
+      "Know whether to go to the ER, urgent care, or wait it out",
+      "Get a realistic idea of costs before you book anything",
+      "Find lower-cost options when they're safe and available",
+      "Get help reviewing bills that feel wrong or too high"
     ],
-    cta: "Explore USA Support",
+    cta: "Learn About USA Support",
     href: "/usa-health-insurance"
   },
   {
     id: "india",
-    eyebrow: "For parents, family members, and support needs in India",
-    title: "Make family healthcare in India easier to manage.",
-    body: "When your parents or family members are in India, even routine healthcare can feel difficult to coordinate from abroad. CareRoute helps families get the right guidance, stay organized, and move through appointments, follow-ups, and care decisions with less confusion.",
+    eyebrow: "Supporting parents or family in India from abroad",
+    title: "Make it easier to help your family from far away.",
+    body: "When your parents need care and you're in another country, even small things feel hard. Appointments get missed. Follow-ups fall through. You're not sure what questions to ask. CareRoute helps you stay organized, get the right guidance, and feel more confident about the care your family is getting.",
     icon: Heart,
     benefits: [
-      "Help finding the right type of care for your parent or family member",
-      "Support with appointments, follow-ups, and routine coordination",
-      "Clearer guidance for non-emergency health questions",
-      "Ongoing support for families managing care from another country",
-      "A simpler, calmer way to stay informed and involved"
+      "Help finding the right doctor or care setting for your parent",
+      "Support with scheduling, follow-ups, and staying on track",
+      "Guidance for routine health questions and decisions",
+      "Ongoing coordination so nothing slips through the cracks",
+      "A calmer, clearer way to support your family's health"
     ],
-    cta: "Explore India Membership",
+    cta: "Learn About India Membership",
     href: "/india-health-membership"
   }
 ];
@@ -52,10 +52,10 @@ export function PathwayCards() {
         
         <div className="mb-10 text-center sm:mb-12 md:mb-14 lg:mb-16">
           <h2 className="font-serif text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl md:text-4xl lg:text-5xl md:leading-tight">
-            Two healthcare journeys. One trusted guide.
+            Which one sounds like you?
           </h2>
           <p className="mx-auto mt-3 max-w-3xl px-4 text-sm leading-relaxed text-brand-dark/70 sm:mt-4 sm:text-base md:text-lg">
-            CareRoute offers specialized support for two very different situations: navigating healthcare in the U.S., and helping your family access and coordinate care in India. Choose the path that fits where you need support today.
+            We help with two very different situations. Pick the one that matches where you need support right now.
           </p>
         </div>
 

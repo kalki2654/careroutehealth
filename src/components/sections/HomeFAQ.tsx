@@ -7,32 +7,32 @@ import { SectionReveal } from "@/components/core/SectionReveal";
 
 const faqs = [
   {
-    question: "Who is CareRoute for?",
-    answer: "CareRoute is designed for expats, international students, parents, and families who need help navigating healthcare decisions in the U.S. or coordinating family healthcare support in India."
+    question: "Who is this for?",
+    answer: "CareRoute is for expats, international students, and families who need help navigating U.S. healthcare or coordinating care for loved ones in India."
   },
   {
-    question: "Is CareRoute a hospital, clinic, or insurance company?",
-    answer: "No. CareRoute is a healthcare navigation and support service. We help you understand options, costs, and next steps so you can make more informed decisions."
+    question: "Are you a hospital or insurance company?",
+    answer: "No. We're a healthcare navigation service. We help you understand your options, costs, and next steps—but we don't provide medical treatment or insurance."
   },
   {
-    question: "Can you help me decide where to go for care in the U.S.?",
-    answer: "Yes. We help you think through the right care setting based on your situation, such as ER, urgent care, primary care, telehealth, or waiting safely when appropriate."
+    question: "Can you help me decide where to go for care?",
+    answer: "Yes. We help you think through whether you should go to the ER, urgent care, a regular doctor, or if it's safe to wait. We focus on what makes sense for your situation."
   },
   {
-    question: "Can you tell me exactly what my medical bill will be?",
-    answer: "No one can guarantee an exact bill in every situation, but we can help you understand likely costs, common billing issues, and what questions to ask before you receive care."
+    question: "Can you tell me exactly what my bill will be?",
+    answer: "No one can guarantee an exact bill, but we can help you understand likely costs, common billing issues, and what questions to ask before you get care."
   },
   {
-    question: "What does the India membership help with?",
-    answer: "The India Health Access Membership is designed for families supporting parents or loved ones in India. It helps with routine care coordination, appointments, follow-ups, and healthcare guidance from abroad."
+    question: "What does the India membership include?",
+    answer: "It's designed for families supporting parents or loved ones in India. We help with routine care coordination, appointments, follow-ups, and healthcare guidance from abroad."
   },
   {
-    question: "Do you provide emergency medical treatment?",
-    answer: "No. If you are having a medical emergency, call local emergency services or go to the nearest emergency department immediately. CareRoute supports navigation and coordination, not direct emergency treatment."
+    question: "Do you provide emergency medical care?",
+    answer: "No. If you're having a medical emergency, call local emergency services or go to the nearest ER immediately. We support navigation and coordination—not emergency treatment."
   },
   {
     question: "Is my information private?",
-    answer: "Yes. We take privacy seriously and handle personal information carefully as part of the support experience."
+    answer: "Yes. We take privacy seriously and handle your personal information carefully."
   }
 ];
 
@@ -50,7 +50,7 @@ export function HomeFAQ() {
         
         <div className="mb-10 text-center sm:mb-12 md:mb-14">
           <h2 className="font-serif text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl md:text-4xl lg:text-5xl">
-            Everything you're wondering about
+            Common questions
           </h2>
         </div>
 

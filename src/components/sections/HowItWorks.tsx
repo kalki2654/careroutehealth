@@ -8,26 +8,26 @@ const steps = [
   {
     number: "01",
     icon: MessageSquare,
-    title: "Choose your path",
-    description: "Tell us whether you need U.S. healthcare navigation or India family care support."
+    title: "Tell us what you need",
+    description: "Are you trying to navigate U.S. healthcare, or help family in India? Start with the path that fits your situation."
   },
   {
     number: "02",
     icon: CheckCircle2,
-    title: "Share your situation",
-    description: "Answer a few simple questions so we understand your insurance, care need, family context, or current challenge."
+    title: "Share a bit about your situation",
+    description: "Answer a few quick questions about your insurance, the care you need, or your family's health situation."
   },
   {
     number: "03",
     icon: TrendingUp,
-    title: "Get practical guidance",
-    description: "Receive clear next steps, support options, and cost-aware recommendations based on your situation."
+    title: "Get clear, practical guidance",
+    description: "We'll help you understand your options, what things might cost, and what makes sense as a next step."
   },
   {
     number: "04",
     icon: ArrowRight,
-    title: "Move forward with confidence",
-    description: "Make better care decisions with less confusion, better preparation, and ongoing support when needed."
+    title: "Make decisions with less stress",
+    description: "Move forward knowing you have support, clearer information, and someone to help if things get confusing."
   }
 ];
 
@@ -43,10 +43,10 @@ export function HowItWorks() {
         
         <div className="mb-12 text-center md:mb-16">
           <h2 className="font-serif text-3xl font-semibold text-brand-dark md:text-5xl">
-            Simple, clear steps when healthcare feels complicated.
+            Here's how it works
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-brand-dark/70 md:text-lg">
-            CareRoute is designed to reduce uncertainty. Whether you need help in the U.S. or support for family in India, the process is straightforward and personal.
+            Whether you need help in the U.S. or support for family in India, the process is simple and personal.
           </p>
         </div>
 
