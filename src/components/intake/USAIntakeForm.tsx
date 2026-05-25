@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, AlertCircle } from "lucide-react";
 
 interface USAIntakeFormProps {
   onSubmit: () => void;
@@ -11,7 +11,7 @@ interface USAIntakeFormProps {
 
 export function USAIntakeForm({ onSubmit, onBack }: USAIntakeFormProps) {
   const [formData, setFormData] = useState({
-    helpWith: "",
+    helpWith: [] as string[],
     timing: "",
     insuranceProvider: "",
     name: "",
@@ -20,22 +20,56 @@ export function USAIntakeForm({ onSubmit, onBack }: USAIntakeFormProps) {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
+      
+      if (!scriptUrl) {
+        throw new Error("Form submission is not configured. Please contact support.");
+      }
 
-    // TODO: Send to your backend/email service
-    console.log("USA Form submitted:", formData);
+      // Map form data to Google Sheets format
+      const submissionData = {
+        path: "USA",
+        helpType: formData.helpWith.join(", "),
+        timing: formData.timing,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        country: "",
+        familyCityIndia: "",
+        insuranceProvider: formData.insuranceProvider,
+        notes: `Help with: ${formData.helpWith.join(", ")}, Timing: ${formData.timing}`
+      };
 
-    setIsSubmitting(false);
-    onSubmit();
+      const response = await fetch(scriptUrl, {
+        method: "POST",
+        mode: "no-cors", // Required for Google Apps Script
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submissionData)
+      });
+
+      // Note: With no-cors mode, we can't read the response
+      // We assume success if no error is thrown
+      setIsSubmitting(false);
+      onSubmit();
+      
+    } catch (err) {
+      console.error("Form submission error:", err);
+      setError(err instanceof Error ? err.message : "Something went wrong while sending your request. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
-  const isValid = formData.helpWith && formData.timing && formData.insuranceProvider && formData.name && formData.email && formData.phone;
+  const isValid = formData.helpWith.length > 0 && formData.timing && formData.insuranceProvider && formData.name && formData.email && formData.phone;
 
   return (
     <motion.div
@@ -61,11 +95,22 @@ export function USAIntakeForm({ onSubmit, onBack }: USAIntakeFormProps) {
         </p>
       </div>
 
+      {error && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-6 flex items-start gap-3 rounded-lg border-2 border-red-200 bg-red-50 p-4"
+        >
+          <AlertCircle className="h-5 w-5 flex-shrink-0 text-red-600" />
+          <p className="text-sm text-red-800">{error}</p>
+        </motion.div>
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* What do you need help with? */}
         <div>
           <label className="mb-2 block text-sm font-semibold text-brand-dark">
-            What do you need help with?
+            What do you need help with? (Select all that apply)
           </label>
           <div className="space-y-2">
             {[
@@ -78,18 +123,26 @@ export function USAIntakeForm({ onSubmit, onBack }: USAIntakeFormProps) {
               <label
                 key={option.value}
                 className={`flex cursor-pointer items-center gap-3 rounded-lg border-2 p-4 transition-all ${
-                  formData.helpWith === option.value
+                  formData.helpWith.includes(option.value)
                     ? "border-brand-coral bg-brand-coral/5"
                     : "border-brand-border bg-white hover:border-brand-dark/20"
                 }`}
               >
                 <input
-                  type="radio"
+                  type="checkbox"
                   name="helpWith"
                   value={option.value}
-                  checked={formData.helpWith === option.value}
-                  onChange={(e) => setFormData({ ...formData, helpWith: e.target.value })}
-                  className="h-4 w-4 text-brand-coral focus:ring-brand-coral"
+                  checked={formData.helpWith.includes(option.value)}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setFormData({
+                      ...formData,
+                      helpWith: e.target.checked
+                        ? [...formData.helpWith, value]
+                        : formData.helpWith.filter((v) => v !== value)
+                    });
+                  }}
+                  className="h-4 w-4 rounded text-brand-coral focus:ring-brand-coral"
                 />
                 <span className="text-sm font-medium text-brand-dark">{option.label}</span>
               </label>
