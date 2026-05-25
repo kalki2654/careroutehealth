@@ -1,4 +1,5 @@
-import Link from "next/link";
+"use client";
+
 import { SiteFooter } from "@/components/sections/SiteFooter";
 
 type LegalSection = {
@@ -13,9 +14,10 @@ type LegalPageProps = {
   intro: string;
   lastUpdated: string;
   sections: LegalSection[];
+  onOpenIntake?: (path?: "usa" | "india") => void;
 };
 
-export function LegalPage({ eyebrow, title, intro, lastUpdated, sections }: LegalPageProps) {
+export function LegalPage({ eyebrow, title, intro, lastUpdated, sections, onOpenIntake }: LegalPageProps) {
   return (
     <main id="top" className="bg-brand-cream pt-[calc(var(--mobile-nav-clearance)+1.5rem)] md:pt-36">
       <section className="site-grid pb-12 md:pb-16">
@@ -55,20 +57,22 @@ export function LegalPage({ eyebrow, title, intro, lastUpdated, sections }: Lega
         </div>
 
         <div className="mt-8 rounded-2xl bg-brand-dark p-5 text-white shadow-lift md:mt-12 md:p-8">
-          <p className="font-serif text-2xl font-semibold md:text-4xl">Need help with your information?</p>
+          <p className="font-serif text-2xl font-semibold md:text-4xl">Questions or concerns?</p>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-white/78 md:text-base md:leading-8">
-            Contact CareRoute Health at{" "}
+            If you have questions about your privacy, data, or how CareRoute works, reach out at{" "}
             <a href="mailto:hello@careroute.health" className="font-bold text-white underline decoration-brand-coral/70 underline-offset-4">
               hello@careroute.health
             </a>
-            . We will review your request and respond as soon as reasonably possible.
+            . We'll respond as soon as possible.
           </p>
-          <Link
-            href="/#assessment"
-            className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-coral px-6 text-sm font-bold text-brand-ink sm:w-auto"
-          >
-            Start Free Assessment
-          </Link>
+          {onOpenIntake && (
+            <button
+              onClick={() => onOpenIntake()}
+              className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-coral px-6 text-sm font-bold text-brand-ink transition-all duration-300 hover:bg-brand-coral/90 sm:w-auto"
+            >
+              Get Started
+            </button>
+          )}
         </div>
       </section>
       <SiteFooter />

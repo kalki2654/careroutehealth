@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
-import { LegalPage } from "@/components/legal/LegalPage";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Medical Disclaimer | CareRoute Health",
-  description:
-    "Read CareRoute Health's medical disclaimer for patient coordination, treatment information, cost estimates, and hospital guidance."
-};
+import { LegalPage } from "@/components/legal/LegalPage";
+import { useIntakeModal } from "@/hooks/useIntakeModal";
+import { IntakeModal } from "@/components/intake/IntakeModal";
 
 const sections = [
   {
@@ -65,13 +62,23 @@ const sections = [
 ];
 
 export default function MedicalDisclaimerPage() {
+  const { isOpen, initialPath, openModal, closeModal } = useIntakeModal();
+
   return (
-    <LegalPage
-      eyebrow="Medical Disclaimer"
-      title="Important limits of our guidance."
-      intro="CareRoute Health helps patients and families understand treatment options and coordinate care in India. This page explains what our service does and does not provide."
-      lastUpdated="May 14, 2026"
-      sections={sections}
-    />
+    <>
+      <LegalPage
+        eyebrow="Medical Disclaimer"
+        title="Important limits of our guidance."
+        intro="CareRoute Health helps patients and families understand treatment options and coordinate care in India. This page explains what our service does and does not provide."
+        lastUpdated="May 14, 2026"
+        sections={sections}
+        onOpenIntake={openModal}
+      />
+      <IntakeModal
+        isOpen={isOpen}
+        onClose={closeModal}
+        initialPath={initialPath}
+      />
+    </>
   );
 }

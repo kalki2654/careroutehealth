@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
-import { LegalPage } from "@/components/legal/LegalPage";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Terms of Service | CareRoute Health",
-  description:
-    "Read the terms that apply when using CareRoute Health's website, assessment form, WhatsApp support, and patient coordination service."
-};
+import { LegalPage } from "@/components/legal/LegalPage";
+import { useIntakeModal } from "@/hooks/useIntakeModal";
+import { IntakeModal } from "@/components/intake/IntakeModal";
 
 const sections = [
   {
@@ -133,13 +130,23 @@ const sections = [
 ];
 
 export default function TermsOfServicePage() {
+  const { isOpen, initialPath, openModal, closeModal } = useIntakeModal();
+
   return (
-    <LegalPage
-      eyebrow="Terms of Service"
-      title="Terms for using CareRoute Health"
-      intro="These terms explain your rights and responsibilities when using the CareRoute Health website and services. Please read them carefully."
-      lastUpdated="January 15, 2025"
-      sections={sections}
-    />
+    <>
+      <LegalPage
+        eyebrow="Terms of Service"
+        title="Terms for using CareRoute Health"
+        intro="These terms explain your rights and responsibilities when using the CareRoute Health website and services. Please read them carefully."
+        lastUpdated="January 15, 2025"
+        sections={sections}
+        onOpenIntake={openModal}
+      />
+      <IntakeModal
+        isOpen={isOpen}
+        onClose={closeModal}
+        initialPath={initialPath}
+      />
+    </>
   );
 }

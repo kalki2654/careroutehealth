@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
-import { LegalPage } from "@/components/legal/LegalPage";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | CareRoute Health",
-  description:
-    "Read how CareRoute Health collects, uses, protects, and shares information provided by patients and families."
-};
+import { LegalPage } from "@/components/legal/LegalPage";
+import { useIntakeModal } from "@/hooks/useIntakeModal";
+import { IntakeModal } from "@/components/intake/IntakeModal";
 
 const sections = [
   {
@@ -96,13 +93,23 @@ const sections = [
 ];
 
 export default function PrivacyPolicyPage() {
+  const { isOpen, initialPath, openModal, closeModal } = useIntakeModal();
+
   return (
-    <LegalPage
-      eyebrow="Privacy Policy"
-      title="How we handle your information"
-      intro="CareRoute Health provides healthcare navigation and support services for families across borders. This policy explains what information we collect, how we use it, how we protect it, and your rights regarding your personal information."
-      lastUpdated="January 15, 2025"
-      sections={sections}
-    />
+    <>
+      <LegalPage
+        eyebrow="Privacy Policy"
+        title="How we handle your information"
+        intro="CareRoute Health provides healthcare navigation and support services for families across borders. This policy explains what information we collect, how we use it, how we protect it, and your rights regarding your personal information."
+        lastUpdated="January 15, 2025"
+        sections={sections}
+        onOpenIntake={openModal}
+      />
+      <IntakeModal
+        isOpen={isOpen}
+        onClose={closeModal}
+        initialPath={initialPath}
+      />
+    </>
   );
 }
