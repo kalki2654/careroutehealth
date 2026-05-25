@@ -21,11 +21,19 @@ export default function Home() {
       <HomeHero onOpenIntake={openModal} />
       <TrustStrip />
       <PathwayCards onOpenIntake={openModal} />
-      <HowItWorks />
-      <USASupportDetails onOpenIntake={openModal} />
-      <IndiaMembershipDetails onOpenIntake={openModal} />
+      <section id="how-it-works">
+        <HowItWorks />
+      </section>
+      <section id="usa-support">
+        <USASupportDetails onOpenIntake={openModal} />
+      </section>
+      <section id="india-membership">
+        <IndiaMembershipDetails onOpenIntake={openModal} />
+      </section>
       <TrustSection />
-      <HomeFAQ />
+      <section id="faq">
+        <HomeFAQ />
+      </section>
       <FinalCTA onOpenIntake={openModal} />
       <SiteFooter />
       <IntakeModal isOpen={isOpen} onClose={closeModal} initialPath={initialPath} />

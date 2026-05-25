@@ -1,7 +1,6 @@
 export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/usa-health-insurance", label: "USA Health Insurance" },
-  { href: "/india-health-membership", label: "India Membership" },
+  { href: "/#usa-support", label: "USA Support" },
+  { href: "/#india-membership", label: "India Membership" },
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/#faq", label: "FAQ" }
 ];

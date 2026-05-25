@@ -25,7 +25,7 @@ const pathways = [
     ],
     cta: "Get Started",
     learnMore: "Learn More",
-    href: "/usa-health-insurance"
+    href: "#usa-support"
   },
   {
     id: "india" as const,
@@ -42,7 +42,7 @@ const pathways = [
     ],
     cta: "Get Started",
     learnMore: "Learn More",
-    href: "/india-health-membership"
+    href: "#india-membership"
   }
 ];
 
