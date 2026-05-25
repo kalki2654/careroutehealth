@@ -12,17 +12,17 @@ const blocks = [
   {
     icon: Shield,
     title: "Before you go",
-    body: "We help you understand what your insurance actually covers, whether a provider is in-network, and what kind of care makes sense for what you're dealing with."
+    body: "You're not sure what your plan covers. You don't know if a provider is in-network. You're worried about getting hit with a huge bill later. We help you understand what your insurance actually pays for, what you'll owe, and whether the care you're considering makes sense for your situation."
   },
   {
     icon: Calendar,
     title: "When you need care now",
-    body: "Should you go to the ER? Urgent care? Can this wait for a regular appointment? We help you think through the safest, smartest next step."
+    body: "It's 9pm and something hurts. Should you go to the ER? Wait for urgent care in the morning? Call your doctor? You're not sure, and you're scared of making the wrong call—or paying thousands for the wrong one. We help you think through the safest, smartest next step."
   },
   {
     icon: FileText,
     title: "After you get a bill",
-    body: "If a charge feels wrong, too high, or just confusing, we help you figure out what happened and what you can do about it."
+    body: "The bill arrived and the number doesn't make sense. It's way higher than you expected, or your insurance denied something they should have covered. You don't know if this is normal or if you should fight it. We help you figure out what happened, what's fair, and what you can actually do about it."
   }
 ];
 
@@ -41,7 +41,10 @@ export function USASupportDetails({ onOpenIntake }: USASupportDetailsProps) {
             We help before, during, and after care
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-brand-dark/70 md:text-lg">
-            The hardest part of U.S. healthcare isn't finding a hospital. It's knowing what to do, where to go, and how much it'll actually cost. We help you avoid expensive mistakes before they happen.
+            The hardest part of U.S. healthcare isn't finding a hospital. It's knowing what to do, where to go, and how much it'll actually cost. Insurance terms are confusing. Bills are unpredictable. You're not sure if you should go to the ER or wait. We help you make better decisions and avoid expensive mistakes.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-brand-dark/60 md:text-base">
+            Common situations: understanding your coverage, deciding between ER and urgent care, estimating costs before you book, finding in-network options, reviewing surprise bills.
           </p>
         </div>
 
@@ -79,6 +82,9 @@ export function USASupportDetails({ onOpenIntake }: USASupportDetailsProps) {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-12 text-center"
         >
+          <p className="mb-4 text-sm text-brand-dark/60 md:text-base">
+            Whether you're an expat, student, or working professional—if U.S. healthcare feels confusing, we're here to help.
+          </p>
           <button
             onClick={() => onOpenIntake("usa")}
             className="group inline-flex items-center gap-2 rounded-full bg-brand-coral px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-coral/90 md:text-base"
