@@ -2,15 +2,15 @@ import Link from "next/link";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 
 const supportLinks = [
-  { label: "USA Health Insurance Navigation", href: "/usa-health-insurance" },
-  { label: "India Health Access Membership", href: "/india-health-membership" },
+  { label: "USA Health Insurance Navigation", href: "/#usa-support" },
+  { label: "India Health Access Membership", href: "/#india-membership" },
   { label: "How It Works", href: "/#how-it-works" },
   { label: "FAQ", href: "/#faq" }
 ];
 
 const companyLinks = [
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-of-service" }
 ];
