@@ -60,8 +60,8 @@ export function LegalPage({ eyebrow, title, intro, lastUpdated, sections, onOpen
           <p className="font-serif text-2xl font-semibold md:text-4xl">Questions or concerns?</p>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-white/78 md:text-base md:leading-8">
             If you have questions about your privacy, data, or how CareRoute works, reach out at{" "}
-            <a href="mailto:hello@careroute.health" className="font-bold text-white underline decoration-brand-coral/70 underline-offset-4">
-              hello@careroute.health
+            <a href="mailto:careroutehealth@zohomail.in" className="font-bold text-white underline decoration-brand-coral/70 underline-offset-4">
+              careroutehealth@zohomail.in
             </a>
             . We'll respond as soon as possible.
           </p>

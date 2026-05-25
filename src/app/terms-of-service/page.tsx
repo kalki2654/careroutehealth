@@ -116,7 +116,7 @@ const sections = [
     body: [
       "[PLACEHOLDER: Specify governing law based on business registration - e.g., laws of India, laws of the State of Delaware, etc.]",
       "[PLACEHOLDER: Specify dispute resolution mechanism - e.g., arbitration, mediation, court jurisdiction]",
-      "For questions about these terms, contact us at hello@careroute.health."
+      "For questions about these terms, contact us at careroutehealth@zohomail.in."
     ]
   },
   {

@@ -592,7 +592,7 @@ export default function IndiaHealthMembershipPage() {
               <div>
                 <h3 className="mb-4 text-sm font-extrabold uppercase text-white">Contact</h3>
                 <div className="grid gap-2 text-sm">
-                  <a href="mailto:hello@careroute.health" className="hover:text-white">hello@careroute.health</a>
+                  <a href="mailto:careroutehealth@zohomail.in" className="hover:text-white">careroutehealth@zohomail.in</a>
                   <span>careroute.health</span>
                 </div>
               </div>

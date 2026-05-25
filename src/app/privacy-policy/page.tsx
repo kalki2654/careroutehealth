@@ -63,7 +63,7 @@ const sections = [
   {
     title: "Your rights and choices",
     items: [
-      "You can request to access, correct, update, or delete your personal information by contacting us at hello@careroute.health.",
+      "You can request to access, correct, update, or delete your personal information by contacting us at careroutehealth@zohomail.in.",
       "You can opt out of follow-up communications at any time.",
       "You can choose not to share medical documents or sensitive information until you are comfortable doing so.",
       "You can ask which healthcare providers or partners your information has been shared with in connection with your request.",
@@ -86,7 +86,7 @@ const sections = [
   {
     title: "Contact us about privacy",
     body: [
-      "If you have questions about this Privacy Policy, how we handle your information, or want to exercise your privacy rights, please contact us at hello@careroute.health.",
+      "If you have questions about this Privacy Policy, how we handle your information, or want to exercise your privacy rights, please contact us at careroutehealth@zohomail.in.",
       "[PLACEHOLDER: Add physical mailing address if required by applicable law]"
     ]
   }

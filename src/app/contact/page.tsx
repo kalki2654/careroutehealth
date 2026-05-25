@@ -143,11 +143,11 @@ export default function ContactPage() {
                   For general inquiries, partnership questions, or if you prefer email.
                 </p>
                 <a
-                  href="mailto:hello@careroute.health"
+                  href="mailto:careroutehealth@zohomail.in"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-brand-coral hover:text-brand-coral/80 md:text-base"
                 >
                   <Mail className="h-4 w-4" strokeWidth={1.5} />
-                  hello@careroute.health
+                  careroutehealth@zohomail.in
                 </a>
                 <p className="mt-3 text-xs text-brand-dark/60 md:text-sm">
                   We typically respond within 24 hours on business days.
